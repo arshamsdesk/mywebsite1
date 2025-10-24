@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> tacharcermics | بازرگانی مرادی</title>
+    <link rel="stylesheet" href="./input.css">
+    <link rel="stylesheet" href="./output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'clay': '#a78a7f',
+                        'sand': '#e7d5c9',
+                    }
+                }
+            }
+        }
+    </script>
+<body class="font-sans bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-700">شرکت کاشی و سرامیک</h1>
+      <nav class="hidden md:flex space-x-6 space-x-reverse text-gray-700">
+        <a href="#products" class="hover:text-blue-600">محصولات</a>
+        <a href="#about" class="hover:text-blue-600">درباره ما</a>
+        <a href="#contact" class="hover:text-blue-600">تماس با ما</a>
+      </nav>
+      <button class="md:hidden text-gray-700">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center h-[70vh] flex items-center justify-center">
+    <div class="bg-black/60 p-6 rounded-xl text-center text-white max-w-xl">
+      <h2 class="text-4xl font-extrabold mb-4">زیبایی در هر کاشی</h2>
+      <p class="mb-6">بهترین کاشی و سرامیک با طراحی مدرن و کیفیت بالا برای خانه و محل کار شما</p>
+      <a href="#products" class="bg-blue-600 px-6 py-3 rounded-xl hover:bg-blue-700 transition">مشاهده محصولات</a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="py-16 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">محصولات ما</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1615873968403-89e41b7f3b1b?auto=format&fit=crop&w=800&q=80" alt="کاشی" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">کاشی مدرن</h4>
+          <p class="text-gray-600 text-sm">طرح‌های لوکس مناسب آشپزخانه و سرویس بهداشتی</p>
+        </div>
+      </div>
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1616628182506-0d3c93d4c3dc?auto=format&fit=crop&w=800&q=80" alt="سرامیک" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">سرامیک کلاسیک</h4>
+          <p class="text-gray-600 text-sm">مقاومت بالا و طراحی شیک برای فضاهای پر رفت و آمد</p>
+        </div>
+      </div>
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1585238342028-7e9a4d7aaf43?auto=format&fit=crop&w=800&q=80" alt="کفپوش" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">کفپوش لوکس</h4>
+          <p class="text-gray-600 text-sm">ایده‌آل برای سالن پذیرایی و اتاق نشیمن</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-gray-100 py-16 px-4">
+    <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <img src="https://images.unsplash.com/photo-1618221531657-9231e650b57c?auto=format&fit=crop&w=900&q=80" alt="about us" class="rounded-2xl shadow-md">
+      <div>
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">درباره ما</h3>
+        <p class="text-gray-600 leading-7">شرکت ما با بیش از ۲۰ سال تجربه در زمینه تولید و عرضه کاشی و سرامیک، همواره تلاش کرده بهترین کیفیت و طراحی را در اختیار مشتریان قرار دهد. هدف ما ایجاد فضاهایی زیبا، مقاوم و ماندگار است.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">تماس با ما</h3>
+    <div class="grid md:grid-cols-2 gap-12">
+      <form class="bg-white p-6 rounded-2xl shadow-md">
+        <input type="text" placeholder="نام" class="w-full mb-4 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="email" placeholder="ایمیل" class="w-full mb-4 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <textarea placeholder="پیام شما" rows="4" class="w-full mb-4 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <button class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition">ارسال</button>
+      </form>
+      <div class="flex flex-col justify-center">
+        <p class="mb-2"><strong>آدرس:</strong> تهران، خیابان نمونه، پلاک ۱۲۳</p>
+        <p class="mb-2"><strong>تلفن:</strong> 021-12345678</p>
+        <p class="mb-2"><strong>ایمیل:</strong> info@tilecompany.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاشی و سرامیک</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-700">شرکت کاشی و سرامیک</h1>
+      <nav class="hidden md:flex space-x-6 space-x-reverse text-gray-700">
+        <a href="#products" class="hover:text-blue-600">محصولات</a>
+        <a href="#about" class="hover:text-blue-600">درباره ما</a>
+        <a href="#contact" class="hover:text-blue-600">تماس با ما</a>
+      </nav>
+      <button class="md:hidden text-gray-700">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center h-[70vh] flex items-center justify-center">
+    <div class="bg-black/60 p-6 rounded-xl text-center text-white max-w-xl">
+      <h2 class="text-4xl font-extrabold mb-4">زیبایی در هر کاشی</h2>
+      <p class="mb-6">بهترین کاشی و سرامیک با طراحی مدرن و کیفیت بالا برای خانه و محل کار شما</p>
+      <a href="#products" class="bg-blue-600 px-6 py-3 rounded-xl hover:bg-blue-700 transition">مشاهده محصولات</a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="py-16 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">محصولات ما</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1615873968403-89e41b7f3b1b?auto=format&fit=crop&w=800&q=80" alt="کاشی" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">کاشی مدرن</h4>
+          <p class="text-gray-600 text-sm">طرح‌های لوکس مناسب آشپزخانه و سرویس بهداشتی</p>
+        </div>
+      </div>
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1616628182506-0d3c93d4c3dc?auto=format&fit=crop&w=800&q=80" alt="سرامیک" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">سرامیک کلاسیک</h4>
+          <p class="text-gray-600 text-sm">مقاومت بالا و طراحی شیک برای فضاهای پر رفت و آمد</p>
+        </div>
+      </div>
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1585238342028-7e9a4d7aaf43?auto=format&fit=crop&w=800&q=80" alt="کفپوش" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">کفپوش لوکس</h4>
+          <p class="text-gray-600 text-sm">ایده‌آل برای سالن پذیرایی و اتاق نشیمن</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-gray-100 py-16 px-4">
+    <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <img src="https://images.unsplash.com/photo-1618221531657-9231e650b57c?auto=format&fit=crop&w=900&q=80" alt="about us" class="rounded-2xl shadow-md">
+      <div>
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">درباره ما</h3>
+        <p class="text-gray-600 leading-7">شرکت ما با بیش از ۲۰ سال تجربه در زمینه تولید و عرضه کاشی و سرامیک، همواره تلاش کرده بهترین کیفیت و طراحی را در اختیار مشتریان قرار دهد. هدف ما ایجاد فضاهایی زیبا، مقاوم و ماندگار است.</p>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 container mx-auto px-4">
+  <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">محصولات</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+    
+    <!-- Product Card -->
+    <a href="https://milanceramic.com/totti/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="https://milanceramic.com/wp-content/uploads/2025/09/TottiLightCream-Polish-300x169.jpg"
+           alt="Totti"
+           class="w-full h-40 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">Totti</h3>
+      </div>
+    </a>
+
+    <!-- Product Card -->
+    <a href="https://milanceramic.com/lilium-4/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="https://milanceramic.com/wp-content/uploads/2025/09/Lilium-Cream-Crystal-300x169.jpg"
+           alt="Lilium"
+           class="w-full h-40 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">Lilium</h3>
+      </div>
+    </a>
+
+    <!-- ادامه محصولات به همین سبک -->
+    
+  </div>
+</section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">تماس با ما</h3>
+    <div class="grid md:grid-cols-2 gap-12">
+      <form class="bg-white p-6 rounded-2xl shadow-md">
+        <input type="text" placeholder="نام" class="w-full mb-4 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="email" placeholder="ایمیل" class="w-full mb-4 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <textarea placeholder="پیام شما" rows="4" class="w-full mb-4 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <button class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition">ارسال</button>
+      </form>
+      <div class="flex flex-col justify-center">
+        <p class="mb-2"><strong>آدرس:</strong> تهران، خیابان نمونه، پلاک ۱۲۳</p>
+        <p class="mb-2"><strong>تلفن:</strong> 021-12345678</p>
+        <p class="mb-2"><strong>ایمیل:</strong> info@tilecompany.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 border-t border-gray-200 mt-10">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- ستون لوگو و توضیحات -->
+    <div class="md:col-span-1 space-y-4">
+      <div class="flex items-center space-x-2">
+        <img src="your-logo.png" alt="لوگو" class="h-10">
+        <span class="text-lg font-bold text-purple-700">دیجی‌کده</span>
+      </div>
+      <p class="text-sm text-gray-600 leading-6">
+        فروشگاه اینترنتی دیجی‌کده با بیش از سه سال تجربه فروش آنلاین در زمینه کالای دیجیتال،
+        همواره تلاش داشته با ارائه خدمات پس از فروش، اصالت کالا و گارانتی معتبر بهترین تجربه خرید را برای مشتریان فراهم کند.
+      </p>
+      <p class="text-sm text-gray-600">آدرس دفتر مرکزی: تهران، خیابان ولیعصر، جنب مترو جهاد، مجتمع ارسطو، طبقه ۴، واحد ۶۲</p>
+      <p class="text-sm text-gray-600">پاساژ علاالدین، طبقه ۲، واحد FGV</p>
+      <p class="text-sm text-gray-600">تلفن پشتیبانی: 021-12345678</p>
+      <p class="text-sm text-gray-600">واتساپ: 0935-0000000</p>
+      <div class="flex space-x-3 mt-2">
+        <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-telegram text-xl"></i></a>
+      </div>
+    </div>
+
+    <!-- ستون دسترسی سریع -->
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-4">دسترسی سریع</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-purple-600">رهگیری پست</a></li>
+        <li><a href="#" class="hover:text-purple-600">رهگیری تیپاکس</a></li>
+      </ul>
+    </div>
+
+    <!-- ستون خدمات مشتریان -->
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-4">خدمات مشتریان</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-purple-600">تماس با ما</a></li>
+        <li><a href="#" class="hover:text-purple-600">گارانتی ویژه دیجی‌کده</a></li>
+        <li><a href="#" class="hover:text-purple-600">سیاست حریم خصوصی</a></li>
+        <li><a href="#" class="hover:text-purple-600">قوانین و مقررات</a></li>
+      </ul>
+    </div>
+
+    <!-- ستون راهنمای خرید -->
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-4">راهنمای خرید</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-purple-600">نحوه ثبت سفارش</a></li>
+        <li><a href="#" class="hover:text-purple-600">شرایط پرداخت</a></li>
+        <li><a href="#" class="hover:text-purple-600">روش و هزینه‌های ارسال</a></li>
+        <li><a href="#" class="hover:text-purple-600">درباره ما</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- بخش نمادها -->
+  <div class="border-t border-gray-200 py-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-4">
+      <div class="flex gap-4">
+        <img src="samandehi.png" alt="نماد ساماندهی" class="h-14">
+        <img src="enamad.png" alt="ای‌نماد" class="h-14">
+        <img src="neshan.png" alt="نماد اعتماد" class="h-14">
+      </div>
+      <p class="text-xs text-gray-500">کلیه حقوق مادی و معنوی این وبسایت متعلق به دیجی‌کده است.</p>
+    </div>
+  </div>
+</footer>
+
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+</body>
+</html>
