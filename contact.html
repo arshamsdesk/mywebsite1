@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> tacharcermics | بازرگانی مرادی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'clay': '',
+                        'sand': '',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-playfair bg-gray-800" dir="rtl">
+    <!-- Header -->
+    <header class="bg-gray-800 shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="h- w-28"><img src="./img/704d7664-9305-4f44-ba99-04bc0ff1fa04.jfif" alt=""></div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 font-bold gap-10 items-center">
+          <a href="./index.html" class="text-white hover:text-lg transition-all">خانه</a>
+          <a href="#" class="text-white hover:text-lg transition-all">درباره ما</a>
+          <a href="#" class="text-white hover:text-lg transition-all">خدمات</a>
+          <a href="#" class="text-white hover:text-lg transition-all ">ارتباط با ما</a>
+        </nav>
+
+        <!-- Button -->
+        <div id="" 
+                class=" md:inline-block  text-white px-4 py-2 rounded-xl  transition">
+          <p>0917-550-6699</p>
+          <p>071-3262-1022</p>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+       <a href="./index.html" class="block py-2 text-white hover:text-gray-500">خانه</a>
+      <a href="./index.html" class="block py-2 text-white hover:text-gray-500">ارتباط با ما</a>
+      <a href="#" class="block py-2 text-white hover:text-gray-500">خدمات</a>
+     
+    </div>
+  </header>
+
+<main dir="rtl">
+    
+    <!-- Breadcrumb -->
+    <div class="bg-black py-3">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="#" class="hover:text-blue-600">Home</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-500">Contact Us</span>
+            </div>
+        </div>
+    </div>
+
+   
+
+            <!-- Contact Info -->
+            <div class="lg:w-full mt-10 ">
+                <div class="bg-gray-700 rounded-lg shadow-md p-6 md:p-8 mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">راه های ارتباطی</h2>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-5">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">آدرس</h3>
+                                <p class="text-white">شعبه 1 : شیراز, صنایع بلوار دکتر حسابی بین کوچه 6 و 8</p>
+                                 <p class="text-white">شعبه 2 : ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">تلفن</h3>
+                                <p class="text-white">9175506688</p>
+                                <p class="text-white">9177388125</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">ایمیل</h3>
+                                <p class="text-white">tacharceramics@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800"> ساعات کاری</h3>
+                                <p class="text-white">شنبه تا پنجشنبه: 8:00  - 21:00 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="bg-gray-700 rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6"> مارا دنبال کنید</h2>
+                    <div class="flex gap-10 ">
+                        <a href="https://www.instagram.com/tacharceram/?hl=en" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+</main>
+
+    <!-- Map Section -->
+    <section class="bg-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-8 text-center">ادرس</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d866.3658930465168!2d52.4554577735615!3d29.70632832303537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fb211001580c31f%3A0x5d2f1bb0caa99926!2z2qnYp9i024wg2Ygg2LPYsdin2YXbjNqpINiq2obYsSjZhdix2KfYr9uMKQ!5e0!3m2!1sen!2s!4v1749023150019!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                 width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        class="w-full h-96"></iframe>
+                        
+           
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mt-48">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2059.1720964317856!2d52.69277942275567!3d29.77472472295505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fb209b8d29a3c17%3A0xe5fdada7f61a8d9e!2z2KjYp9iy2LHar9in2YbbjCDaqdin2LTbjCDZiCDYs9ix2KfZhduM2qkg2YXYsdin2K_bjA!5e0!3m2!1sen!2suk!4v1761165897868!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade
+                width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        class="w-full h-96"></iframe>
+
+            </div>
+
+        </div>
+    </section>
+
+      <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8" dir="rtl"  >
+        <div class="px-10" >
+            <div class="grid grid-cols-1 mx-auto md:grid-cols-4 ">
+                <div class="w-3/5">
+                    <h3 class="text-lg font-bold mb-4 ">تچر سرامیک</h3>
+                    <p class="text-gray-400">توضیع کننده انواع سرامیک و کاشی با کیفیت عالی و طراحی منحصر به فرد</p>
+                </div>
+                <!-- <div>
+                    <h3 class="text-lg font-bold mb-4">لینک های سریع</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">صفحه اصلی</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">درباره ما</a></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">تماس با ما</h3>
+                    <ul class="space-y-2 text-gray-400 ">
+                           <li>
+                        <span class="">شیراز, بلوار صنایع، بین کوچه 6 و 8 </span><br/>
+                            <span class="">ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی </span>
+                        </li>
+                        <li class="flex-col items-center" dir="">
+                            <span>09175506688</span><br>
+                            <span>09177388125</span>
+                        </li>
+                        <li class="flex items-center">
+
+                            <span>tacharcermics@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">شبکه های اجتماعی</h3>
+                    <div class="flex space-x-4 space-x-reverse gap-10">
+                        <a href="https://www.instagram.com/tacharceram/?hl=en" class="text-gray-400 hover:text-white text-xl"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/></svg></a>
+                        <a href="https://wa.me/9175506688?text=سلام!%20چطور%20میتونم%20کمکتون%20کنم؟" class="text-gray-400 hover:text-white text-xl"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/><path fill="currentColor" d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"/></svg></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023تچر سرامیک. تمام حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+ <script src="./main.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

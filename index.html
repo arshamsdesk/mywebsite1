@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> tacharcermics | بازرگانی مرادی</title>
+    <link rel="stylesheet" href="./input.css">
+    <link rel="stylesheet" href="./output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'clay': '',
+                        'sand': '#',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-playfair bg-black  ">
+     <header class="bg-gray-800 shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="h- w-28"><img src="./img/704d7664-9305-4f44-ba99-04bc0ff1fa04.jfif" alt=""></div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 font-bold gap-10 items-center">
+          <a href="#" class="text-white hover:text-lg transition-all">خانه</a>
+          <a href="./contact.html" class="text-white hover:text-lg transition-all">درباره ما</a>
+          <a href="" class="text-white hover:text-lg transition-all">خدمات</a>
+          <a href="./contact.html" class="text-white hover:text-lg transition-all ">ارتباط با ما</a>
+        </nav>
+
+        <!-- Button -->
+        <div id="" 
+                class=" md:inline-block  text-white px-4 py-2 rounded-xl  transition">
+          <p>0917-550-6699</p>
+          <p>071-3262-1022</p>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <a href="./index.html" class="block py-2 text-white hover:text-gray-500">خانه</a>
+      <a href="./contact.html" class="block py-2 text-white hover:text-gray-500">ارتباط با ما</a>
+      <a href="#" class="block py-2 text-white hover:text-gray-500">خدمات</a>
+      
+     
+    </div>
+  </header>
+  
+
+    <!-- Hero Section -->
+     <img src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg" alt="" class=" h-[80%] sm:h-[95%] w-full absolute">
+    <section class="pb-32 relative flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+        <div class="absolute inset-0 "></div>
+        <div class="relative z-10 text-center px-4 mt-40">
+            <h1 class="text-4xl md:text-6xl font-playfair text-white mb-4">تچر اینه اصالت</h1>
+            <p class="text-xl text-white mb-8">Unique, timeless pieces for your home</p>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <!-- <section class=" text-white pt-80 ps-12 ">
+        <div class="max-w-6xl mx-auto px-4 ">
+            <div class="md:flex items-center">
+                <div class="mb-8 md:mb-0 ">
+                    <img " src="https://milanceramic.com/wp-content/uploads/2024/05/River-Black_80160_S14010103-1.jpg">
+                </div>
+                <div dir="rtl" class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold font-playfair mb-6 text-white">داستان تچر </h2>
+                    <p class="mb-4 text-white font-bold " ">نخستین کاخ‌هایی است که بر روی سکوی تخت جمشید یافته شد. سنگ‌های این کاخ، خاکستری است به‌گونه ای‌که بازتاب آدمی در آن می‌افتاده و از همین رو تازگی‌ها آن را آینه خانه یا تالار آینه هم می‌خواندند. بر روی دیواره‌های پلکان این کاخ نقش‌های گوناگونی دیده می‌شود. از شاهان هخامنشی داریوش بزرگ، خشایارشا و اردشیر سوم سنگ‌نبشته‌هایی در این کاخ به جای مانده‌است. .</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+     <section id="products" class="py-16 mt-64  container mx-auto px-10">
+    <h3 class="text-3xl font-bold text-center text-white mb-12">محصولات ما</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="./img/IMG-20250904-WA0003.jpg" alt="کاشی" class="w-full h-fit object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">کاشی مدرن</h4>
+          <p class="text-gray-600 text-sm">طرح‌های لوکس مناسب آشپزخانه و سرویس بهداشتی</p>
+        </div>
+      </div>
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="./img/IMG-20250904-WA0007.jpg" alt="سرامیک" class="w-full h-fit object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">سرامیک کلاسیک</h4>
+          <p class="text-gray-600 text-sm">مقاومت بالا و طراحی شیک برای فضاهای پر رفت و آمد</p>
+        </div>
+      </div>
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <img src="./img/IMG-20250904-WA0008.jpg" alt="کفپوش" class="w-full h-fit object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">کفپوش لوکس</h4>
+          <p class="text-gray-600 text-sm">ایده‌آل برای سالن پذیرایی و اتاق نشیمن</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <div class="h-[80%] w-[80%] flex mx-auto mt-10">
+        <video src="https://youthful-engelbart-nzy9vjdur.storage.c2.liara.space/VID_20250514_112728_996.mp4" controls loop></video>
+    </div>
+
+
+         <section class=" md:w-[70%] mx-auto pb-10   ">
+            <h2 class="flex justify-center font-extrabold text-5xl mb-16 pt-20 text-white ">محصولات جدید</h2>
+            
+            <div class=" w-full sm:flex ">
+                <div class="md:w-full  sm:pb-0 pb-48 "><img src="./img/SUNRISE-WHITE-120x120-1-2048x2048.jpg" alt="">
+                <p class=" flex justify-center -mt-72   text-white text-2xl font-bold ">انواع سرامیک </p>
+                <span class="text-4xl flex justify-center text-white font-bold">سبک,منعطف,پرسلان</span>
+                </div>
+                <div class="md:w-full "><img src="./img/3D-AntinoBlack-CarlottaGold60120-7mm-wc-2048x2048.jpg" alt="">
+                <p class=" flex justify-center -mt-72   text-white text-2xl font-bold ">سایز جدید</p>
+                <span class="text-4xl flex justify-center text-white font-bold">120*120</span>
+                </div>
+            </div>
+            <div class="sm:flex pt-52 items-center ">
+                <div class="">
+                     <a href="https://milanceramic.com/totti/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="./img/TottiLightCream-Polish-768x432.jpg"
+           alt="Totti"
+           class="w-full h-40 object-cover  transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">Totti</h3>
+      </div>
+    </a>
+</div>
+                 <div class="">
+                     <a href="https://milanceramic.com/totti/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="./img/Tomas-4match-60120-1-1-768x768.jpg"
+           alt="Totti"
+           class="w-full h-40 object-cover  transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">tomas</h3>
+      </div>
+    </a>
+</div>
+ <div class="">
+                     <a href="https://milanceramic.com/totti/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="./img/Lilium-Cream-Crystal-768x432.jpg"
+           alt="Totti"
+           class="w-full h-40 object-cover  transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">lilium</h3>
+      </div>
+    </a>
+</div>
+                 <div class="">
+                     <a href="https://milanceramic.com/totti/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="./img/nevada-silver-matt-80-80-768x591.jpg"
+           alt="Totti"
+           class="w-full h-40 object-cover  transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">nevada</h3>
+      </div>
+    </a>
+</div>
+ <div class="">
+                     <a href="https://milanceramic.com/totti/" class="group relative overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+      <img src="./img/zimer-40-40-10mm-768x432.jpg"
+           alt="Totti"
+           class="w-full h-40 object-cover  transition duration-500">
+      <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-lg font-bold">zimer</h3>
+      </div>
+    </a>
+</div>
+            </div>
+        </section>
+
+    
+
+   
+    <!-- About Section -->
+   <section class="container-fluid   ">
+    <section class="py-16 bg-black text-white" >
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="md:flex items-center">
+               
+                <div class="md:w-1/2 md:pl-12" dir="rtl">
+                    <h2 class="text-3xl font-playfair mb-6">انواع لعاب تولیدی :</h2>
+                    <p class="mb-4">1-نانو پالیش</p>
+                    <p class="mb-4">2-کریستال پولیش</p>
+                    <p class="mb-4">3-شوگر</p>
+                    <p class="mb-4">4-مات ابریشمی</p>
+                    <p class="mb-4">5-راف مات</p>
+                    <p class="mb-4">6-مات پاششی</p>
+                    
+                </div>
+                 <div class="md:w-1/2 mb-8 md:mb-0 overflow-hidden">
+                    <img data-aos="fade-right" src="./img/Janik-White-Black-60-120-polish.jpg">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- about 2-->
+    <section class="py-16 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="md:flex items-center">
+                
+                <div class="md:w-1/2 md:pl-12 font-playfair"  dir="rtl">
+                    <h2 class="text-3xl font-playfair mb-6">بزرگ ترین انبار در جنوب کشور</h2>
+                    <p class="mb-4">با سابقه‌ی درخشان در تولید انواع محصولات سرامیکی، همواره با کیفیتی فراتر از استاندارد های ملی و بین‌المللی، در تلاش بوده تا آنچه را که در رویای شما وجود دارد را با دستِ توانمندان و مهندسان ایرانی به واقعیت تبدیل کند. میلان مفتخر است که با نگاه همیشگی به آینده، محصولاتی متناسب با نیاز و سلیقه‌ی روزِ مصرف کنندگان ایرانی ارائه دهد.</p>
+                    
+                </div>
+                <div class="md:w-1/2 mb-8 md:mb-0 overflow-hidden">
+                    <img data-aos="fade-right" src="./img/Ocean-BlueMariah-Blue-80160-H140102.jpg">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--about 3-->
+    <section class="py-16 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="md:flex items-center">
+                
+                <div class="md:w-1/2 md:pl-12" dir="rtl">
+                    <h2 class="text-3xl font-playfair mb-6">بالا ترین استاندارد ها</h2>
+                  <section class="bg-black py-16">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    
+    <div class="space-y-6 text-lg text-white font-playfair text-right">
+      <p>«سرامیکی با اصالت؛ کیفیتی درخور خانه‌های ماندگار.»</p>
+      <p>«وقتی کیفیت معیار انتخاب است، سرامیک ما پاسخ انتخاب شماست.»</p>
+      <p>«ترکیب هنر و دوام؛ سرامیکی فراتر از انتظار.»</p>
+
+    </div>
+  </div>
+</section>
+
+                </div>
+                <div class="md:w-1/2 mb-8 md:mb-0 overflow-hidden">
+                    <img data-aos="fade-right" src="./img/Astora-4Match-super-Black-WALL-1-2-1-scaled.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+   </section>
+
+
+    <footer class="bg-gray-800 text-white py-8" dir="rtl"  >
+        <div class="px-10" >
+            <div class="grid grid-cols-1 mx-auto md:grid-cols-4 ">
+                <div class="w-3/5">
+                    <h3 class="text-lg font-bold mb-4 ">تچر سرامیک</h3>
+                    <p class="text-gray-400">توضیع کننده انواع سرامیک و کاشی با کیفیت عالی و طراحی منحصر به فرد</p>
+                </div>
+                <!-- <div>
+                    <h3 class="text-lg font-bold mb-4">لینک های سریع</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">صفحه اصلی</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">درباره ما</a></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">تماس با ما</h3>
+                    <ul class="space-y-2 text-gray-400 ">
+                           <li>
+                        <span class="">شیراز, بلوار صنایع، بین کوچه 6 و 8 </span><br/>
+                            <span class="">ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی </span>
+                        </li>
+                        <li class="flex-col items-center" dir="">
+                            <span>09175506688</span><br>
+                            <span>09177388125</span>
+                        </li>
+                        <li class="flex items-center">
+
+                            <span>tacharcermics@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">شبکه های اجتماعی</h3>
+                    <div class="flex space-x-4 space-x-reverse gap-10">
+                        <a href="https://www.instagram.com/tacharceram/?hl=en" class="text-gray-400 hover:text-white text-xl"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/></svg></a>
+                        <a href="https://wa.me/9175506688?text=سلام!%20چطور%20میتونم%20کمکتون%20کنم؟" target="_blank" class="text-gray-400 hover:text-white text-xl"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/><path fill="currentColor" d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"/></svg></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023تچر سرامیک. تمام حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
