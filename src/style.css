@@ -1,0 +1,6 @@
+.bg-modern-dark {
+  background:
+    radial-gradient(circle at top left, rgba(14,165,233,0.12), transparent),
+    radial-gradient(circle at bottom right, rgba(99,102,241,0.12), transparent),
+    linear-gradient(180deg, #0a0f1a, #0f172a);
+}
