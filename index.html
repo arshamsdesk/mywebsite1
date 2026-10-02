@@ -53,18 +53,37 @@
     </script>
 
     <style>
-        * {
-            scroll-behavior: smooth;
+        *, *::before, *::after {
             box-sizing: border-box;
+        }
+
+        html {
+            direction: rtl;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            /* هدر ثابت روی لینک‌های #about و ... نیفتد */
+            scroll-padding-top: 6rem;
         }
 
         body {
             margin: 0;
             font-family: Vazirmatn, Arial, sans-serif;
+            /* جلوگیری از اسکرول افقی روی همه دستگاه‌ها */
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body.en {
             font-family: Montserrat, Arial, sans-serif;
+        }
+
+        img, svg, video {
+            max-width: 100%;
+        }
+
+        /* شکستن کلمات طولانی (ایمیل، متن انگلیسی) تا بیرون نزنند */
+        h1, h2, h3, p, li, span, a {
+            overflow-wrap: anywhere;
         }
 
         .glass {
@@ -80,18 +99,16 @@
             -webkit-backdrop-filter: blur(14px);
         }
 
-        /* جهت صفحه ثابت می‌ماند؛ با تغییر زبان Layout جابه‌جا نمی‌شود. */
-        html {
-            direction: rtl;
-        }
-
         /* متن انگلیسی فقط خودش LTR می‌شود؛ جهت کلی صفحه تغییر نمی‌کند. */
         body.en .language-text {
             direction: ltr;
+            text-align: left;
         }
 
-        body.en .language-text {
-            text-align: left;
+        /* در موبایل hover وجود ندارد؛ انیمیشن‌های hover فقط روی دستگاه‌های دارای ماوس */
+        @media (hover: none) {
+            .group:hover img { transform: none !important; }
+            article:hover { transform: none !important; }
         }
     </style>
 </head>
@@ -100,9 +117,7 @@
 <body class="fa min-h-screen text-gray-900">
 
 
-    <!-- =====================================================
-         BACKGROUND
-    ====================================================== -->
+    <!-- BACKGROUND -->
 
     <div class="fixed inset-0 -z-20 bg-cover bg-center"
          style="background-image: url('./img/ChatGPT\ Image\ Sep\ 2\,\ 2026\,\ 11_17_46\ AM.png');"></div>
@@ -111,20 +126,20 @@
 
 
     <!-- =====================================================
-         NAVBAR
+         NAVBAR  (منوی دسکتاپ از lg به بالا؛ تبلت از منوی موبایل استفاده می‌کند)
     ====================================================== -->
 
-    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+    <header class="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
 
-        <nav class="glass max-w-7xl mx-auto rounded-2xl px-6 py-4 shadow-lg">
+        <nav class="glass max-w-7xl mx-auto rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-lg">
 
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between gap-4">
 
                 <!-- LOGO -->
-                <a href="#" class="text-2xl font-black tracking-wide">TACHAR</a>
+                <a href="#" class="text-xl sm:text-2xl font-black tracking-wide">TACHAR</a>
 
                 <!-- DESKTOP MENU -->
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
                     <a href="#" class="hover:text-gray-500 transition">
                         <span data-fa="خانه" data-en="Home">خانه</span>
                     </a>
@@ -141,62 +156,45 @@
 
                 <!-- CTA -->
                 <a href="https://wa.me/989175506691" target="_blank"
-                   class="hidden md:block bg-black text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition">
+                   class="hidden lg:block bg-black text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition whitespace-nowrap">
                     <span data-fa="درخواست مشاوره" data-en="Request a Consultation">درخواست مشاوره</span>
                 </a>
 
                 <!-- DESKTOP LANGUAGE -->
-                <div class="hidden md:flex items-center gap-1
-                            bg-white/70 backdrop-blur-sm
-                            border border-black/10
-                            rounded-xl p-1">
-
+                <div class="hidden lg:flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1">
                     <button onclick="setLanguage('fa')"
-                            class="lang-fa-btn px-3 py-1.5 rounded-lg
-                                   bg-black text-white
-                                   text-xs font-bold
-                                   transition-all duration-300">FA</button>
-
+                            class="lang-fa-btn px-3 py-1.5 rounded-lg bg-black text-white text-xs font-bold transition-all duration-300">FA</button>
                     <button onclick="setLanguage('en')"
-                            class="lang-en-btn px-3 py-1.5 rounded-lg
-                                   bg-white text-black
-                                   text-xs font-bold
-                                   transition-all duration-300">EN</button>
+                            class="lang-en-btn px-3 py-1.5 rounded-lg bg-white text-black text-xs font-bold transition-all duration-300">EN</button>
                 </div>
 
                 <!-- MOBILE BUTTON -->
-                <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+                <button id="menuBtn" class="lg:hidden text-2xl w-10 h-10 flex items-center justify-center"
+                        aria-label="Menu" aria-expanded="false">☰</button>
 
             </div>
 
 
-            <!-- MOBILE MENU -->
-            <div id="mobileMenu" class="hidden md:hidden pt-5">
+            <!-- MOBILE / TABLET MENU -->
+            <div id="mobileMenu" class="hidden lg:hidden pt-5 max-h-[calc(100svh-6rem)] overflow-y-auto">
 
-                <div class="flex flex-col gap-4 text-sm">
-                    <a href="#"><span data-fa="خانه" data-en="Home">خانه</span></a>
-                    <a href="./cutalog.html"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
-                    <a href="#about"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
-                    <a href="./cont.html"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
+                <div class="flex flex-col gap-1 text-base">
+                    <a href="#" class="py-2"><span data-fa="خانه" data-en="Home">خانه</span></a>
+                    <a href="./cutalog.html" class="py-2"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
+                    <a href="#about" class="py-2"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
+                    <a href="./cont.html" class="py-2"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
+                    <a href="https://wa.me/989175506691" target="_blank"
+                       class="mt-2 bg-black text-white text-center px-5 py-3 rounded-xl">
+                        <span data-fa="درخواست مشاوره" data-en="Request a Consultation">درخواست مشاوره</span>
+                    </a>
                 </div>
 
                 <!-- MOBILE LANGUAGE -->
-                <div class="flex items-center gap-1
-                            bg-white/70 backdrop-blur-sm
-                            border border-black/10
-                            rounded-xl p-1 mt-5 w-fit">
-
+                <div class="flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1 mt-5 w-fit">
                     <button onclick="setLanguage('fa')"
-                            class="lang-fa-btn px-4 py-1.5 rounded-lg
-                                   bg-black text-white
-                                   text-xs font-bold
-                                   transition-all duration-300">FA</button>
-
+                            class="lang-fa-btn px-4 py-1.5 rounded-lg bg-black text-white text-xs font-bold transition-all duration-300">FA</button>
                     <button onclick="setLanguage('en')"
-                            class="lang-en-btn px-4 py-1.5 rounded-lg
-                                   bg-white text-black
-                                   text-xs font-bold
-                                   transition-all duration-300">EN</button>
+                            class="lang-en-btn px-4 py-1.5 rounded-lg bg-white text-black text-xs font-bold transition-all duration-300">EN</button>
                 </div>
 
             </div>
@@ -214,44 +212,42 @@
     <main id="home">
 
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
+        <!-- HERO: تصویر داخل یک کانتینر relative است، نه absolute نسبت به کل صفحه -->
 
-        <div class="flex justify-center">
+        <div class="px-3 sm:px-4 pt-3 sm:pt-4">
 
-            <img src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
-                 alt=""
-                 class="h-[60%] sm:h-[95%] w-[95%] mx-auto absolute rounded-3xl">
+            <div class="relative max-w-[1600px] mx-auto rounded-3xl overflow-hidden
+                        min-h-[75svh] sm:min-h-[85vh] flex items-center justify-center">
 
-            <section class="pb-32 flex items-center justify-center bg-cover bg-center"
-                     style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <img src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                     alt=""
+                     class="absolute inset-0 w-full h-full object-cover">
 
-                <div class="z-10 text-center px-4 mt-52">
+                <div class="absolute inset-0 bg-black/20"></div>
 
-                    <h1 class="text-4xl md:text-6xl font-playfair text-white mb-4">
+                <section class="relative z-10 text-center px-5 pt-28 pb-12 sm:pt-32 max-w-4xl">
+
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black leading-tight text-white mb-4">
                         <span data-fa="تچر اینه اصالت" data-en="Tachar Means Authenticity">تچر اینه اصالت</span>
                     </h1>
 
-                    <p class="text-xl text-white mb-8"
+                    <p class="text-base sm:text-xl text-white mb-4"
                        data-fa="قطعاتی خاص و ماندگار برای خانه شما"
                        data-en="Unique, timeless pieces for your home">قطعاتی خاص و ماندگار برای خانه شما</p>
 
-                </div>
+                </section>
 
-            </section>
+            </div>
 
         </div>
 
 
 
-        <!-- =================================================
-             MAIN INTRO
-        ================================================== -->
+        <!-- MAIN INTRO -->
 
-        <section class="min-h-screen flex items-center px-6 -mt-20 sm:mt-40">
+        <section class="flex items-center px-4 sm:px-6 py-14 md:py-24">
 
-            <div class="max-w-7xl mx-auto w-[90%] flex">
+            <div class="max-w-7xl mx-auto w-full">
 
                 <div class="max-w-3xl">
 
@@ -261,7 +257,7 @@
                               data-en="✦ Quality You Can See">✦ کیفیتی که دیده می‌شود</span>
                     </div>
 
-                    <h1 class="text-5xl md:text-7xl font-black leading-tight">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight">
                         <span data-fa="زیبایی را" data-en="Build Beauty">زیبایی را</span>
                         <br>
                         <span class="text-gray-500"
@@ -270,20 +266,20 @@
                         <span data-fa="بسازید." data-en="Your Life">بسازید.</span>
                     </h1>
 
-                    <p class="mt-7 text-gray-700 text-lg leading-9 max-w-2xl">
+                    <p class="mt-6 sm:mt-7 text-gray-700 text-base sm:text-lg leading-8 sm:leading-9 max-w-2xl">
                         <span data-fa="تچر سرامیک با بیش از 20 سال سابقه درخشان با برند قدیم کاشی و سرامیک مرادی شروع به کار کردیم و ما امروز در مسیری هستیم برای رسیدن به فردای تچر سرامیک. ارزش‌هایی را دنبال می‌کنیم که هر خریداری به دنبال آن است. ما سنت‌ها را حفظ می‌کنیم، قابلیت اطمینان را برای مشتریان ایجاد می‌کنیم، نیازها را درک می‌کنیم و فضای زندگی بهتری می‌سازیم."
                               data-en="Tachar Ceramic began its journey with more than 20 years of experience under the former Moradi Tile & Ceramic brand. Today, we are building the future of Tachar Ceramic by following the values every customer looks for. We preserve tradition, create trust, understand your needs, and create better living spaces.">تچر سرامیک با بیش از 20 سال سابقه درخشان با برند قدیم کاشی و سرامیک مرادی شروع به کار کردیم و ما امروز در مسیری هستیم برای رسیدن به فردای تچر سرامیک. ارزش‌هایی را دنبال می‌کنیم که هر خریداری به دنبال آن است. ما سنت‌ها را حفظ می‌کنیم، قابلیت اطمینان را برای مشتریان ایجاد می‌کنیم، نیازها را درک می‌کنیم و فضای زندگی بهتری می‌سازیم.</span>
                     </p>
 
-                    <div class="flex flex-wrap gap-4 mt-9">
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-9">
 
                         <a href="./cutalog.html"
-                           class="bg-black text-white px-7 py-4 rounded-xl hover:bg-gray-800 transition shadow-xl">
+                           class="bg-black text-white text-center px-7 py-4 rounded-xl hover:bg-gray-800 transition shadow-xl">
                             <span data-fa="مشاهده محصولات" data-en="View Products">مشاهده محصولات</span>
                         </a>
 
                         <a href="https://wa.me/989175506691" target="_blank"
-                           class="glass px-7 py-4 rounded-xl hover:bg-white transition">
+                           class="glass text-center px-7 py-4 rounded-xl hover:bg-white transition">
                             <span data-fa="دریافت مشاوره" data-en="Get a Consultation">دریافت مشاوره</span>
                         </a>
 
@@ -297,34 +293,32 @@
 
 
 
-        <!-- =================================================
-             STATS
-        ================================================== -->
+        <!-- STATS -->
 
-        <section class="px-6 -mt-10">
+        <section class="px-4 sm:px-6">
 
             <div class="max-w-7xl mx-auto">
 
-                <div class="glass rounded-3xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="glass rounded-3xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
 
                     <div>
-                        <div class="text-3xl font-black" data-fa="+۱۰" data-en="+10">+۱۰</div>
-                        <p class="text-gray-600 mt-2" data-fa="سال تجربه" data-en="Years of Experience">سال تجربه</p>
+                        <div class="text-2xl sm:text-3xl font-black" data-fa="+۱۰" data-en="+10">+۱۰</div>
+                        <p class="text-gray-600 mt-2 text-sm sm:text-base" data-fa="سال تجربه" data-en="Years of Experience">سال تجربه</p>
                     </div>
 
                     <div>
-                        <div class="text-3xl font-black" data-fa="+۵۰۰" data-en="+500">+۵۰۰</div>
-                        <p class="text-gray-600 mt-2" data-fa="محصول" data-en="Products">محصول</p>
+                        <div class="text-2xl sm:text-3xl font-black" data-fa="+۵۰۰" data-en="+500">+۵۰۰</div>
+                        <p class="text-gray-600 mt-2 text-sm sm:text-base" data-fa="محصول" data-en="Products">محصول</p>
                     </div>
 
                     <div>
-                        <div class="text-3xl font-black" data-fa="+۱۰۰۰۰" data-en="+10000">+۱۰۰۰۰</div>
-                        <p class="text-gray-600 mt-2" data-fa="پروژه" data-en="Projects">پروژه</p>
+                        <div class="text-2xl sm:text-3xl font-black" data-fa="+۱۰۰۰۰" data-en="+10000">+۱۰۰۰۰</div>
+                        <p class="text-gray-600 mt-2 text-sm sm:text-base" data-fa="پروژه" data-en="Projects">پروژه</p>
                     </div>
 
                     <div>
-                        <div class="text-3xl font-black" data-fa="۱۰۰٪" data-en="100%">۱۰۰٪</div>
-                        <p class="text-gray-600 mt-2" data-fa="تضمین کیفیت" data-en="Quality Guarantee">تضمین کیفیت</p>
+                        <div class="text-2xl sm:text-3xl font-black" data-fa="۱۰۰٪" data-en="100%">۱۰۰٪</div>
+                        <p class="text-gray-600 mt-2 text-sm sm:text-base" data-fa="تضمین کیفیت" data-en="Quality Guarantee">تضمین کیفیت</p>
                     </div>
 
                 </div>
@@ -335,107 +329,75 @@
 
 
 
-        <!-- =================================================
-             PRODUCTS
-        ================================================== -->
+        <!-- PRODUCTS -->
 
-        <section id="products" class="px-6 py-16">
+        <section id="products" class="px-4 sm:px-6 py-14 md:py-16">
 
             <div class="max-w-7xl mx-auto">
 
-                <div class="mb-12">
+                <div class="mb-10 md:mb-12">
 
                     <p class="text-sm text-gray-500 mb-3"
                        data-fa="مجموعه"
                        data-en="COLLECTION">مجموعه</p>
 
-                    <h2 class="text-4xl md:text-5xl font-black">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black">
                         <span data-fa="محصولات منتخب" data-en="Featured Products">محصولات منتخب</span>
                     </h2>
 
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
 
                     <!-- PRODUCT 1 -->
                     <div class="glass rounded-3xl overflow-hidden group">
-
-                        <div class="h-80 overflow-hidden">
+                        <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
                             <img src="./img/IMG-20250904-WA0003.jpg"
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                                 alt="سرامیک">
+                                 alt="سرامیک" loading="lazy">
                         </div>
-
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500"
-                               data-fa="مجموعه مرمر"
-                               data-en="Marble Collection">مجموعه مرمر</p>
-
-                            <h3 class="text-xl font-bold mt-2">
+                        <div class="p-5 sm:p-6">
+                            <p class="text-sm text-gray-500" data-fa="مجموعه مرمر" data-en="Marble Collection">مجموعه مرمر</p>
+                            <h3 class="text-lg sm:text-xl font-bold mt-2">
                                 <span data-fa="سرامیک مرمر سفید" data-en="White Marble Ceramic">سرامیک مرمر سفید</span>
                             </h3>
-
-                            <button class="mt-5 text-sm font-bold">
-                                <a href="./cutalog.html"
-                                   data-fa="مشاهده محصول ←"
-                                   data-en="View Product →">مشاهده محصول ←</a>
-                            </button>
+                            <a href="./cutalog.html" class="inline-block mt-5 text-sm font-bold"
+                               data-fa="مشاهده محصول ←" data-en="View Product →">مشاهده محصول ←</a>
                         </div>
-
                     </div>
 
                     <!-- PRODUCT 2 -->
                     <div class="glass rounded-3xl overflow-hidden group">
-
-                        <div class="h-80 overflow-hidden">
+                        <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
                             <img src="./img/IMG-20250904-WA0007.jpg"
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                                 alt="سرامیک">
+                                 alt="سرامیک" loading="lazy">
                         </div>
-
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500"
-                               data-fa="مجموعه لوکس"
-                               data-en="Luxury Collection">مجموعه لوکس</p>
-
-                            <h3 class="text-xl font-bold mt-2">
+                        <div class="p-5 sm:p-6">
+                            <p class="text-sm text-gray-500" data-fa="مجموعه لوکس" data-en="Luxury Collection">مجموعه لوکس</p>
+                            <h3 class="text-lg sm:text-xl font-bold mt-2">
                                 <span data-fa="سرامیک طوسی لوکس" data-en="Luxury Gray Ceramic">سرامیک طوسی لوکس</span>
                             </h3>
-
-                            <button class="mt-5 text-sm font-bold">
-                                <a href="./cutalog.html"
-                                   data-fa="مشاهده محصول ←"
-                                   data-en="View Product →">مشاهده محصول ←</a>
-                            </button>
+                            <a href="./cutalog.html" class="inline-block mt-5 text-sm font-bold"
+                               data-fa="مشاهده محصول ←" data-en="View Product →">مشاهده محصول ←</a>
                         </div>
-
                     </div>
 
                     <!-- PRODUCT 3 -->
-                    <div class="glass rounded-3xl overflow-hidden group">
-
-                        <div class="h-80 overflow-hidden">
+                    <div class="glass rounded-3xl overflow-hidden group sm:col-span-2 lg:col-span-1">
+                        <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
                             <img src="./img/IMG-20250904-WA0008.jpg"
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                                 alt="سرامیک">
+                                 alt="سرامیک" loading="lazy">
                         </div>
-
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500"
-                               data-fa="مجموعه پریمیوم"
-                               data-en="Premium Collection">مجموعه پریمیوم</p>
-
-                            <h3 class="text-xl font-bold mt-2">
+                        <div class="p-5 sm:p-6">
+                            <p class="text-sm text-gray-500" data-fa="مجموعه پریمیوم" data-en="Premium Collection">مجموعه پریمیوم</p>
+                            <h3 class="text-lg sm:text-xl font-bold mt-2">
                                 <span data-fa="سرامیک ابر و بادی" data-en="Cloudy Marble Ceramic">سرامیک ابر و بادی</span>
                             </h3>
-
-                            <button class="mt-5 text-sm font-bold">
-                                <a href="./cutalog.html"
-                                   data-fa="مشاهده محصول ←"
-                                   data-en="View Product →">مشاهده محصول ←</a>
-                            </button>
+                            <a href="./cutalog.html" class="inline-block mt-5 text-sm font-bold"
+                               data-fa="مشاهده محصول ←" data-en="View Product →">مشاهده محصول ←</a>
                         </div>
-
                     </div>
 
                 </div>
@@ -446,23 +408,17 @@
 
 
 
-        <!-- =====================================================
-             ARTICLES
-        ====================================================== -->
+        <!-- ARTICLES -->
 
-        <section id="articles" class="relative py-16 px-4 sm:px-6 lg:px-8">
+        <section id="articles" class="relative py-14 md:py-16 px-4 sm:px-6 lg:px-8">
 
-            <!-- HEADER -->
-            <div class="max-w-7xl mx-auto text-center mb-12">
+            <div class="max-w-7xl mx-auto text-center mb-10 md:mb-12">
 
-                <span class="inline-block px-4 py-2 mb-4 rounded-full
-                             bg-white/60 backdrop-blur-md
-                             border border-white/70
-                             text-gray-700 text-sm font-medium"
+                <span class="inline-block px-4 py-2 mb-4 rounded-full bg-white/60 backdrop-blur-md border border-white/70 text-gray-700 text-sm font-medium"
                       data-fa="مجله تاچار"
                       data-en="Tachar Magazine">مجله تاچار</span>
 
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-5">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-5">
                     <span data-fa="مقالات و راهنمای انتخاب"
                           data-en="Articles & Selection Guide">مقالات و راهنمای انتخاب</span>
 
@@ -473,379 +429,207 @@
 
                 <p class="max-w-2xl mx-auto text-gray-600 leading-8 text-sm md:text-base"
                    data-fa="پاسخ به سوالات شما درباره کاشی، سرامیک، پرسلان و انتخاب بهترین متریال برای فضای شما"
-                   data-en="Answers to your questions about tiles, ceramics, porcelain and choosing the best materials for your space">پاسخ به سوالات شما درباره کاشی، سرامیک، پرسلان و انتخاب
-                    بهترین متریال برای فضای شما</p>
+                   data-en="Answers to your questions about tiles, ceramics, porcelain and choosing the best materials for your space">پاسخ به سوالات شما درباره کاشی، سرامیک، پرسلان و انتخاب بهترین متریال برای فضای شما</p>
 
             </div>
 
 
-            <!-- ARTICLES GRID -->
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
 
                 <!-- ARTICLE 1 -->
-                <article class="group overflow-hidden rounded-3xl
-                                bg-white/55 backdrop-blur-xl
-                                border border-white/70
-                                shadow-lg hover:shadow-2xl
-                                transition-all duration-500
-                                hover:-translate-y-2">
-
+                <article class="group overflow-hidden rounded-3xl bg-white/55 backdrop-blur-xl border border-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <a href="./articles/tafavot-kashi-va-seramik.html" class="block">
-
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="./img/nevada-silver-matt-80-80-768x591.jpg"
-                                 alt="تفاوت کاشی و سرامیک چیست؟"
-                                 class="w-full h-full object-cover
-                                        transition-transform duration-700
-                                        group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t
-                                        from-black/40 via-transparent to-transparent"></div>
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="./img/nevada-silver-matt-80-80-768x591.jpg" alt="تفاوت کاشی و سرامیک چیست؟"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>
-
-                        <div class="p-6">
-
-                            <span class="text-xs text-gray-500"
-                                  data-fa="راهنمای انتخاب"
-                                  data-en="Selection Guide">راهنمای انتخاب</span>
-
-                            <h3 class="mt-2 text-xl font-bold text-gray-900
-                                       leading-8 group-hover:text-gray-600 transition"
+                        <div class="p-5 sm:p-6">
+                            <span class="text-xs text-gray-500" data-fa="راهنمای انتخاب" data-en="Selection Guide">راهنمای انتخاب</span>
+                            <h3 class="mt-2 text-lg sm:text-xl font-bold text-gray-900 leading-8 group-hover:text-gray-600 transition"
                                 data-fa="تفاوت کاشی و سرامیک چیست؟"
                                 data-en="What Is the Difference Between Tile and Ceramic?">تفاوت کاشی و سرامیک چیست؟</h3>
-
                             <p class="mt-3 text-sm text-gray-600 leading-7"
                                data-fa="تفاوت کاشی و سرامیک را بررسی می‌کنیم و می‌بینیم هرکدام برای چه فضایی مناسب‌تر هستند."
-                               data-en="We examine the differences between tiles and ceramics and see which one is better suited for different spaces.">تفاوت کاشی و سرامیک را بررسی می‌کنیم و می‌بینیم
-                                هرکدام برای چه فضایی مناسب‌تر هستند.</p>
-
-                            <span class="inline-flex items-center gap-2 mt-5
-                                         text-sm font-semibold text-gray-800">
+                               data-en="We examine the differences between tiles and ceramics and see which one is better suited for different spaces.">تفاوت کاشی و سرامیک را بررسی می‌کنیم و می‌بینیم هرکدام برای چه فضایی مناسب‌تر هستند.</p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-gray-800">
                                 <span data-fa="مطالعه مقاله" data-en="Read Article">مطالعه مقاله</span>
-                                <span class="transition-transform duration-300
-                                             group-hover:translate-x-1">←</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">←</span>
                             </span>
-
                         </div>
-
                     </a>
-
                 </article>
-
 
                 <!-- ARTICLE 2 -->
-                <article class="group overflow-hidden rounded-3xl
-                                bg-white/55 backdrop-blur-xl
-                                border border-white/70
-                                shadow-lg hover:shadow-2xl
-                                transition-all duration-500
-                                hover:-translate-y-2">
-
+                <article class="group overflow-hidden rounded-3xl bg-white/55 backdrop-blur-xl border border-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <a href="./articles/best-floor-ceramic.html" class="block">
-
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="./img/Astora-4Match-super-Black-WALL-1-2-1-scaled.jpg"
-                                 alt="بهترین سرامیک برای کف ساختمان"
-                                 class="w-full h-full object-cover
-                                        transition-transform duration-700
-                                        group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t
-                                        from-black/40 via-transparent to-transparent"></div>
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="./img/Astora-4Match-super-Black-WALL-1-2-1-scaled.jpg" alt="بهترین سرامیک برای کف ساختمان"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>
-
-                        <div class="p-6">
-
-                            <span class="text-xs text-gray-500"
-                                  data-fa="راهنمای خرید"
-                                  data-en="Buying Guide">راهنمای خرید</span>
-
-                            <h3 class="mt-2 text-xl font-bold text-gray-900
-                                       leading-8 group-hover:text-gray-600 transition"
+                        <div class="p-5 sm:p-6">
+                            <span class="text-xs text-gray-500" data-fa="راهنمای خرید" data-en="Buying Guide">راهنمای خرید</span>
+                            <h3 class="mt-2 text-lg sm:text-xl font-bold text-gray-900 leading-8 group-hover:text-gray-600 transition"
                                 data-fa="بهترین سرامیک برای کف ساختمان کدام است؟"
                                 data-en="What Is the Best Ceramic for Building Floors?">بهترین سرامیک برای کف ساختمان کدام است؟</h3>
-
                             <p class="mt-3 text-sm text-gray-600 leading-7"
                                data-fa="با مهم‌ترین نکات انتخاب سرامیک کف، مقاومت، کاربرد و ویژگی‌های مناسب آشنا شوید."
-                               data-en="Learn about the most important factors in choosing floor ceramics, including durability, application and key features.">با مهم‌ترین نکات انتخاب سرامیک کف، مقاومت،
-                                کاربرد و ویژگی‌های مناسب آشنا شوید.</p>
-
-                            <span class="inline-flex items-center gap-2 mt-5
-                                         text-sm font-semibold text-gray-800">
+                               data-en="Learn about the most important factors in choosing floor ceramics, including durability, application and key features.">با مهم‌ترین نکات انتخاب سرامیک کف، مقاومت، کاربرد و ویژگی‌های مناسب آشنا شوید.</p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-gray-800">
                                 <span data-fa="مطالعه مقاله" data-en="Read Article">مطالعه مقاله</span>
-                                <span class="transition-transform duration-300
-                                             group-hover:translate-x-1">←</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">←</span>
                             </span>
-
                         </div>
-
                     </a>
-
                 </article>
-
 
                 <!-- ARTICLE 3 -->
-                <article class="group overflow-hidden rounded-3xl
-                                bg-white/55 backdrop-blur-xl
-                                border border-white/70
-                                shadow-lg hover:shadow-2xl
-                                transition-all duration-500
-                                hover:-translate-y-2">
-
+                <article class="group overflow-hidden rounded-3xl bg-white/55 backdrop-blur-xl border border-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <a href="./articles/porcelain-ceramic.html" class="block">
-
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="./img/electra-light-cream.jpg"
-                                 alt="سرامیک پرسلان چیست؟"
-                                 class="w-full h-full object-cover
-                                        transition-transform duration-700
-                                        group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t
-                                        from-black/40 via-transparent to-transparent"></div>
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="./img/electra-light-cream.jpg" alt="سرامیک پرسلان چیست؟"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>
-
-                        <div class="p-6">
-
-                            <span class="text-xs text-gray-500"
-                                  data-fa="دانش سرامیک"
-                                  data-en="Ceramic Knowledge">دانش سرامیک</span>
-
-                            <h3 class="mt-2 text-xl font-bold text-gray-900
-                                       leading-8 group-hover:text-gray-600 transition"
+                        <div class="p-5 sm:p-6">
+                            <span class="text-xs text-gray-500" data-fa="دانش سرامیک" data-en="Ceramic Knowledge">دانش سرامیک</span>
+                            <h3 class="mt-2 text-lg sm:text-xl font-bold text-gray-900 leading-8 group-hover:text-gray-600 transition"
                                 data-fa="سرامیک پرسلان چیست و چه تفاوتی با سرامیک معمولی دارد؟"
                                 data-en="What Is Porcelain Ceramic and How Does It Differ from Regular Ceramic?">سرامیک پرسلان چیست و چه تفاوتی با سرامیک معمولی دارد؟</h3>
-
                             <p class="mt-3 text-sm text-gray-600 leading-7"
                                data-fa="پرسلان چیست، چه ویژگی‌هایی دارد و چه زمانی انتخاب بهتری برای پروژه شماست؟"
-                               data-en="What is porcelain, what are its features, and when is it a better choice for your project?">پرسلان چیست، چه ویژگی‌هایی دارد و چه زمانی
-                                انتخاب بهتری برای پروژه شماست؟</p>
-
-                            <span class="inline-flex items-center gap-2 mt-5
-                                         text-sm font-semibold text-gray-800">
+                               data-en="What is porcelain, what are its features, and when is it a better choice for your project?">پرسلان چیست، چه ویژگی‌هایی دارد و چه زمانی انتخاب بهتری برای پروژه شماست؟</p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-gray-800">
                                 <span data-fa="مطالعه مقاله" data-en="Read Article">مطالعه مقاله</span>
-                                <span class="transition-transform duration-300
-                                             group-hover:translate-x-1">←</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">←</span>
                             </span>
-
                         </div>
-
                     </a>
-
                 </article>
-
 
                 <!-- ARTICLE 4 -->
-                <article class="group overflow-hidden rounded-3xl
-                                bg-white/55 backdrop-blur-xl
-                                border border-white/70
-                                shadow-lg hover:shadow-2xl
-                                transition-all duration-500
-                                hover:-translate-y-2">
-
+                <article class="group overflow-hidden rounded-3xl bg-white/55 backdrop-blur-xl border border-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <a href="./articles/matt-or-glossy.html" class="block">
-
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="./img/Elvin-Nescafe-polish-80-160-copy-1024x576.jpg"
-                                 alt="سرامیک مات یا براق"
-                                 class="w-full h-full object-cover
-                                        transition-transform duration-700
-                                        group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t
-                                        from-black/40 via-transparent to-transparent"></div>
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="./img/Elvin-Nescafe-polish-80-160-copy-1024x576.jpg" alt="سرامیک مات یا براق"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>
-
-                        <div class="p-6">
-
-                            <span class="text-xs text-gray-500"
-                                  data-fa="طراحی داخلی"
-                                  data-en="Interior Design">طراحی داخلی</span>
-
-                            <h3 class="mt-2 text-xl font-bold text-gray-900
-                                       leading-8 group-hover:text-gray-600 transition"
+                        <div class="p-5 sm:p-6">
+                            <span class="text-xs text-gray-500" data-fa="طراحی داخلی" data-en="Interior Design">طراحی داخلی</span>
+                            <h3 class="mt-2 text-lg sm:text-xl font-bold text-gray-900 leading-8 group-hover:text-gray-600 transition"
                                 data-fa="سرامیک مات بهتر است یا براق؟"
                                 data-en="Is Matte or Glossy Ceramic Better?">سرامیک مات بهتر است یا براق؟</h3>
-
                             <p class="mt-3 text-sm text-gray-600 leading-7"
                                data-fa="مزایا و کاربرد سرامیک مات و براق را برای کف، دیوار و فضاهای مختلف مقایسه می‌کنیم."
-                               data-en="We compare the advantages and applications of matte and glossy ceramics for floors, walls and different spaces.">مزایا و کاربرد سرامیک مات و براق را برای کف،
-                                دیوار و فضاهای مختلف مقایسه می‌کنیم.</p>
-
-                            <span class="inline-flex items-center gap-2 mt-5
-                                         text-sm font-semibold text-gray-800">
+                               data-en="We compare the advantages and applications of matte and glossy ceramics for floors, walls and different spaces.">مزایا و کاربرد سرامیک مات و براق را برای کف، دیوار و فضاهای مختلف مقایسه می‌کنیم.</p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-gray-800">
                                 <span data-fa="مطالعه مقاله" data-en="Read Article">مطالعه مقاله</span>
-                                <span class="transition-transform duration-300
-                                             group-hover:translate-x-1">←</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">←</span>
                             </span>
-
                         </div>
-
                     </a>
-
                 </article>
-
 
                 <!-- ARTICLE 5 -->
-                <article class="group overflow-hidden rounded-3xl
-                                bg-white/55 backdrop-blur-xl
-                                border border-white/70
-                                shadow-lg hover:shadow-2xl
-                                transition-all duration-500
-                                hover:-translate-y-2">
-
+                <article class="group overflow-hidden rounded-3xl bg-white/55 backdrop-blur-xl border border-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <a href="./articles/best-ceramic-size.html" class="block">
-
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="./img/Jackson-Rustic-40-1-2-1024x576.jpg"
-                                 alt="بهترین سایز سرامیک برای پذیرایی"
-                                 class="w-full h-full object-cover
-                                        transition-transform duration-700
-                                        group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t
-                                        from-black/40 via-transparent to-transparent"></div>
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="./img/Jackson-Rustic-40-1-2-1024x576.jpg" alt="بهترین سایز سرامیک برای پذیرایی"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>
-
-                        <div class="p-6">
-
-                            <span class="text-xs text-gray-500"
-                                  data-fa="راهنمای انتخاب"
-                                  data-en="Selection Guide">راهنمای انتخاب</span>
-
-                            <h3 class="mt-2 text-xl font-bold text-gray-900
-                                       leading-8 group-hover:text-gray-600 transition"
+                        <div class="p-5 sm:p-6">
+                            <span class="text-xs text-gray-500" data-fa="راهنمای انتخاب" data-en="Selection Guide">راهنمای انتخاب</span>
+                            <h3 class="mt-2 text-lg sm:text-xl font-bold text-gray-900 leading-8 group-hover:text-gray-600 transition"
                                 data-fa="بهترین سایز سرامیک برای پذیرایی چیست؟"
                                 data-en="What Is the Best Ceramic Size for a Living Room?">بهترین سایز سرامیک برای پذیرایی چیست؟</h3>
-
                             <p class="mt-3 text-sm text-gray-600 leading-7"
                                data-fa="بررسی سایزهای پرکاربرد سرامیک و انتخاب ابعاد مناسب برای فضاهای مختلف."
-                               data-en="A look at popular ceramic sizes and how to choose the right dimensions for different spaces.">بررسی سایزهای پرکاربرد سرامیک و انتخاب ابعاد
-                                مناسب برای فضاهای مختلف.</p>
-
-                            <span class="inline-flex items-center gap-2 mt-5
-                                         text-sm font-semibold text-gray-800">
+                               data-en="A look at popular ceramic sizes and how to choose the right dimensions for different spaces.">بررسی سایزهای پرکاربرد سرامیک و انتخاب ابعاد مناسب برای فضاهای مختلف.</p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-gray-800">
                                 <span data-fa="مطالعه مقاله" data-en="Read Article">مطالعه مقاله</span>
-                                <span class="transition-transform duration-300
-                                             group-hover:translate-x-1">←</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">←</span>
                             </span>
-
                         </div>
-
                     </a>
-
                 </article>
 
-
                 <!-- ARTICLE 6 -->
-                <article class="group overflow-hidden rounded-3xl
-                                bg-white/55 backdrop-blur-xl
-                                border border-white/70
-                                shadow-lg hover:shadow-2xl
-                                transition-all duration-500
-                                hover:-translate-y-2">
-
+                <article class="group overflow-hidden rounded-3xl bg-white/55 backdrop-blur-xl border border-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <a href="./articles/bathroom-ceramic.html" class="block">
-
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="./img/marshal-80-160-pol-copy-768x432.jpg"
-                                 alt="بهترین کاشی و سرامیک برای سرویس بهداشتی"
-                                 class="w-full h-full object-cover
-                                        transition-transform duration-700
-                                        group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t
-                                        from-black/40 via-transparent to-transparent"></div>
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="./img/marshal-80-160-pol-copy-768x432.jpg" alt="بهترین کاشی و سرامیک برای سرویس بهداشتی"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>
-
-                        <div class="p-6">
-
-                            <span class="text-xs text-gray-500"
-                                  data-fa="سرویس بهداشتی"
-                                  data-en="Bathroom">سرویس بهداشتی</span>
-
-                            <h3 class="mt-2 text-xl font-bold text-gray-900
-                                       leading-8 group-hover:text-gray-600 transition"
+                        <div class="p-5 sm:p-6">
+                            <span class="text-xs text-gray-500" data-fa="سرویس بهداشتی" data-en="Bathroom">سرویس بهداشتی</span>
+                            <h3 class="mt-2 text-lg sm:text-xl font-bold text-gray-900 leading-8 group-hover:text-gray-600 transition"
                                 data-fa="برای سرویس بهداشتی چه نوع کاشی و سرامیکی مناسب است؟"
                                 data-en="What Type of Tile and Ceramic Is Best for Bathrooms?">برای سرویس بهداشتی چه نوع کاشی و سرامیکی مناسب است؟</h3>
-
                             <p class="mt-3 text-sm text-gray-600 leading-7"
                                data-fa="راهنمای انتخاب کاشی و سرامیک مناسب برای حمام و سرویس بهداشتی."
-                               data-en="A guide to choosing the right tiles and ceramics for bathrooms and washrooms.">راهنمای انتخاب کاشی و سرامیک مناسب برای حمام
-                                و سرویس بهداشتی.</p>
-
-                            <span class="inline-flex items-center gap-2 mt-5
-                                         text-sm font-semibold text-gray-800">
+                               data-en="A guide to choosing the right tiles and ceramics for bathrooms and washrooms.">راهنمای انتخاب کاشی و سرامیک مناسب برای حمام و سرویس بهداشتی.</p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-gray-800">
                                 <span data-fa="مطالعه مقاله" data-en="Read Article">مطالعه مقاله</span>
-                                <span class="transition-transform duration-300
-                                             group-hover:translate-x-1">←</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">←</span>
                             </span>
-
                         </div>
-
                     </a>
-
                 </article>
 
             </div>
 
 
             <!-- VIEW ALL -->
-            <div class="text-center mt-12">
-
+            <div class="text-center mt-10 md:mt-12">
                 <a href="./articles.html"
-                   class="inline-flex items-center justify-center
-                          px-8 py-3.5 rounded-full
-                          bg-gray-900 text-white
-                          hover:bg-gray-700
-                          transition-all duration-300 shadow-lg">
-
+                   class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-all duration-300 shadow-lg">
                     <span data-fa="مشاهده همه مقالات" data-en="View All Articles">مشاهده همه مقالات</span>
-
                     <span class="mr-2">←</span>
-
                 </a>
-
             </div>
 
         </section>
 
 
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
+        <!-- ABOUT -->
 
-        <section id="about" class="px-6 py-16">
+        <section id="about" class="px-4 sm:px-6 py-14 md:py-16">
 
             <div class="max-w-7xl mx-auto">
 
-                <div class="glass rounded-[2rem] p-8 md:p-16">
+                <div class="glass rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 md:p-16">
 
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
                         <div>
-
                             <p class="text-sm text-gray-500 mb-4"
                                data-fa="درباره تچر"
                                data-en="ABOUT TACHAR">درباره تچر</p>
 
-                            <h2 class="text-4xl md:text-5xl font-black leading-tight">
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
                                 <span data-fa="انتخابی برای" data-en="A Choice For">انتخابی برای</span>
                                 <br>
                                 <span class="text-gray-500"
                                       data-fa="فضاهای خاص"
                                       data-en="Exceptional Spaces">فضاهای خاص</span>
                             </h2>
-
                         </div>
 
                         <div>
-
-                            <p class="text-gray-700 leading-9">
+                            <p class="text-gray-700 leading-8 sm:leading-9">
                                 <span data-fa="ما در تچر تلاش می‌کنیم مجموعه‌ای از سرامیک‌های باکیفیت و طراحی مدرن را ارائه کنیم تا انتخاب برای پروژه‌های شما ساده‌تر و حرفه‌ای‌تر باشد."
                                       data-en="At Tachar, we strive to provide a collection of high-quality ceramics with modern designs, making the selection process for your projects easier and more professional.">ما در تچر تلاش می‌کنیم مجموعه‌ای از سرامیک‌های باکیفیت و طراحی مدرن را ارائه کنیم تا انتخاب برای پروژه‌های شما ساده‌تر و حرفه‌ای‌تر باشد.</span>
                             </p>
 
-                            <p class="text-gray-700 leading-9 mt-5">
+                            <p class="text-gray-700 leading-8 sm:leading-9 mt-5">
                                 <span data-fa="از طراحی داخلی خانه تا پروژه‌های بزرگ ساختمانی، کیفیت و زیبایی اولویت ماست."
                                       data-en="From home interior design to large construction projects, quality and beauty are always our priority.">از طراحی داخلی خانه تا پروژه‌های بزرگ ساختمانی، کیفیت و زیبایی اولویت ماست.</span>
                             </p>
-
                         </div>
 
                     </div>
@@ -858,26 +642,24 @@
 
 
 
-        <!-- =================================================
-             CTA
-        ================================================== -->
+        <!-- CTA -->
 
-        <section id="contact" class="px-6 py-16">
+        <section id="contact" class="px-4 sm:px-6 py-14 md:py-16">
 
             <div class="max-w-5xl mx-auto">
 
-                <div class="dark-glass text-white rounded-[2rem] p-10 md:p-16 text-center">
+                <div class="dark-glass text-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 md:p-16 text-center">
 
                     <p class="text-gray-400 text-sm mb-4"
                        data-fa="پروژه خود را شروع کنید"
                        data-en="START YOUR PROJECT">پروژه خود را شروع کنید</p>
 
-                    <h2 class="text-4xl md:text-5xl font-black">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
                         <span data-fa="برای پروژه‌تان آماده‌اید؟"
                               data-en="Ready For Your Project?">برای پروژه‌تان آماده‌اید؟</span>
                     </h2>
 
-                    <p class="text-gray-300 mt-5"
+                    <p class="text-gray-300 mt-5 text-sm sm:text-base"
                        data-fa="برای دریافت قیمت و مشاوره با ما در ارتباط باشید."
                        data-en="Contact us for pricing and consultation.">برای دریافت قیمت و مشاوره با ما در ارتباط باشید.</p>
 
@@ -889,21 +671,12 @@
                 </div>
 
 
-                <!-- =============================================
-                     SEO IMAGE + TEXT
-                ============================================== -->
+                <!-- SEO IMAGE + TEXT -->
 
-                <section class="w-[80%] mx-auto mt-16">
+                <section class="w-full md:w-[90%] lg:w-[80%] mx-auto mt-12 md:mt-16">
 
-                    <article class="overflow-hidden rounded-3xl
-                                    bg-white/70 backdrop-blur-md
-                                    border border-black/10
-                                    shadow-[0_15px_45px_rgba(0,0,0,0.08)]
-                                    transition-all duration-300
-                                    hover:-translate-y-1
-                                    hover:shadow-[0_20px_55px_rgba(0,0,0,0.12)]">
+                    <article class="overflow-hidden rounded-3xl bg-white/70 backdrop-blur-md border border-black/10 shadow-[0_15px_45px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(0,0,0,0.12)]">
 
-                        <!-- IMAGE -->
                         <div class="w-full">
                             <img src="./img/paragraph.png"
                                  alt="کاشی و سرامیک با کیفیت بالا | تچر سرامیک"
@@ -912,27 +685,20 @@
                                  loading="lazy">
                         </div>
 
-                        <!-- TEXT -->
-                        <div class="p-7 md:p-10 text-right">
+                        <div class="p-5 sm:p-7 md:p-10 text-right">
 
-                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-5"
+                            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-5 leading-snug"
                                 data-fa="نماینده برند میلان ؛ بزرگترین کارخانه خاورمیانه"
                                 data-en="Milan Brand Representative; The Largest Factory in the Middle East">نماینده برند میلان ؛ بزرگترین کارخانه خاورمیانه</h2>
 
-                            <p class="text-gray-600 leading-9 text-sm md:text-base">
+                            <p class="text-gray-600 leading-8 sm:leading-9 text-sm md:text-base">
                                 <span data-fa="تچر سرامیک با ارائه مجموعه‌ای متنوع از کاشی و سرامیک، انتخابی مناسب برای پروژه‌های ساختمانی، دکوراسیون داخلی و فضاهای تجاری و مسکونی است. کیفیت محصولات، تنوع طرح و توجه به نیاز مشتری از مهم‌ترین ویژگی‌های مجموعه ماست."
-                                      data-en="Tachar Ceramic offers a diverse collection of tiles and ceramics suitable for construction projects, interior design, residential spaces and commercial spaces. Product quality, design variety and attention to customer needs are among our main priorities.">تچر سرامیک با ارائه مجموعه‌ای متنوع از کاشی و سرامیک،
-                                    انتخابی مناسب برای پروژه‌های ساختمانی، دکوراسیون داخلی و
-                                    فضاهای تجاری و مسکونی است. کیفیت محصولات، تنوع طرح و
-                                    توجه به نیاز مشتری از مهم‌ترین ویژگی‌های مجموعه ماست.</span>
+                                      data-en="Tachar Ceramic offers a diverse collection of tiles and ceramics suitable for construction projects, interior design, residential spaces and commercial spaces. Product quality, design variety and attention to customer needs are among our main priorities.">تچر سرامیک با ارائه مجموعه‌ای متنوع از کاشی و سرامیک، انتخابی مناسب برای پروژه‌های ساختمانی، دکوراسیون داخلی و فضاهای تجاری و مسکونی است. کیفیت محصولات، تنوع طرح و توجه به نیاز مشتری از مهم‌ترین ویژگی‌های مجموعه ماست.</span>
                             </p>
 
-                            <p class="text-gray-600 leading-9 text-sm md:text-base mt-4">
+                            <p class="text-gray-600 leading-8 sm:leading-9 text-sm md:text-base mt-4">
                                 <span data-fa="برای مشاهده مدل‌های مختلف کاشی و سرامیک، دریافت اطلاعات محصولات و استعلام قیمت می‌توانید با کارشناسان تچر سرامیک در ارتباط باشید."
-                                      data-en="To explore different tile and ceramic models, receive product information and request a price quotation, you can contact the Tachar Ceramic team.">برای مشاهده مدل‌های مختلف کاشی و سرامیک، دریافت اطلاعات
-                                    محصولات و استعلام قیمت می‌توانید با کارشناسان
-                                    <strong class="text-gray-800">تچر سرامیک</strong>
-                                    در ارتباط باشید.</span>
+                                      data-en="To explore different tile and ceramic models, receive product information and request a price quotation, you can contact the Tachar Ceramic team.">برای مشاهده مدل‌های مختلف کاشی و سرامیک، دریافت اطلاعات محصولات و استعلام قیمت می‌توانید با کارشناسان تچر سرامیک در ارتباط باشید.</span>
                             </p>
 
                         </div>
@@ -953,11 +719,11 @@
          FOOTER
     ====================================================== -->
 
-    <footer class="px-5 pb-6 pt-16">
-        <div class="max-w-7xl mx-auto bg-black text-white rounded-[2rem] overflow-hidden">
-            <div class="px-7 py-10 md:px-12 md:py-12">
+    <footer class="px-3 sm:px-5 pb-6 pt-12 md:pt-16">
+        <div class="max-w-7xl mx-auto bg-black text-white rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden">
+            <div class="px-6 py-9 sm:px-7 md:px-12 md:py-12">
 
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-10">
 
                     <!-- BRAND -->
                     <div>
@@ -970,24 +736,24 @@
                     </div>
 
                     <!-- CONTACT INFO -->
-                    <div>
+                    <div class="text-sm sm:text-base">
                         <ul class="space-y-2 text-gray-400">
                             <li>
                                 <span>شیراز, بلوار صنایع، بین کوچه 6 و 8</span><br/>
                                 <span>ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی</span>
                             </li>
-                            <li class="flex-col items-center">
+                            <li>
                                 <span>09175506688</span><br>
                                 <span>09177388125</span>
                             </li>
-                            <li class="flex items-center">
-                                <span>tacharcermics@gmail.com</span>
+                            <li>
+                                <span class="break-all">tacharcermics@gmail.com</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- LINKS -->
-                    <div class="flex flex-wrap gap-8 text-sm">
+                    <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
                         <a href="./mew.html" class="text-gray-300 hover:text-white transition">
                             <span data-fa="خانه" data-en="Home">خانه</span>
                         </a>
@@ -1005,7 +771,6 @@
                     <!-- SOCIAL -->
                     <div class="flex items-center gap-3">
 
-                        <!-- Instagram -->
                         <a href="https://instagram.com/tacharceram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                            class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -1015,7 +780,6 @@
                             </svg>
                         </a>
 
-                        <!-- WhatsApp -->
                         <a href="https://wa.me/989175506691" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
                            class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -1053,98 +817,81 @@
 
     <script>
 
-        /*
-         * ==================================================
-         * TACHAR LANGUAGE SYSTEM
-         * ==================================================
-         * تغییر زبان فقط متن را تغییر می‌دهد.
-         * dir صفحه هرگز تغییر نمی‌کند، بنابراین Layout
-         * هنگام تغییر زبان جابه‌جا نمی‌شود.
-         */
+        /* تغییر زبان فقط متن را عوض می‌کند؛ dir صفحه ثابت می‌ماند. */
 
         function setLanguage(language) {
 
-            /* فقط lang تغییر می‌کند. */
             document.documentElement.lang = language;
 
-            /* کلاس زبان روی body */
             document.body.classList.remove("fa", "en");
             document.body.classList.add(language);
 
-            /* تغییر تمام متن‌های دوزبانه */
             document
                 .querySelectorAll("[data-fa][data-en]")
                 .forEach(element => {
-
-                    const faText = element.getAttribute("data-fa");
-                    const enText = element.getAttribute("data-en");
-
                     element.textContent =
                         language === "en"
-                            ? enText
-                            : faText;
-
+                            ? element.getAttribute("data-en")
+                            : element.getAttribute("data-fa");
                 });
 
-            /* TITLE */
             document.title =
                 language === "en"
                     ? "Tachar Ceramic | Tiles & Ceramics | Moradi Trading"
                     : "تاچار سرامیک | کاشی و سرامیک | بازرگانی مرادی";
 
-            /* FA BUTTONS */
-            document
-                .querySelectorAll(".lang-fa-btn")
-                .forEach(button => {
+            document.querySelectorAll(".lang-fa-btn").forEach(button => {
+                const active = language === "fa";
+                button.classList.toggle("bg-black", active);
+                button.classList.toggle("text-white", active);
+                button.classList.toggle("bg-white", !active);
+                button.classList.toggle("text-black", !active);
+            });
 
-                    if (language === "fa") {
-                        button.classList.remove("bg-white", "text-black");
-                        button.classList.add("bg-black", "text-white");
-                    } else {
-                        button.classList.remove("bg-black", "text-white");
-                        button.classList.add("bg-white", "text-black");
-                    }
+            document.querySelectorAll(".lang-en-btn").forEach(button => {
+                const active = language === "en";
+                button.classList.toggle("bg-black", active);
+                button.classList.toggle("text-white", active);
+                button.classList.toggle("bg-white", !active);
+                button.classList.toggle("text-black", !active);
+            });
 
-                });
-
-            /* EN BUTTONS */
-            document
-                .querySelectorAll(".lang-en-btn")
-                .forEach(button => {
-
-                    if (language === "en") {
-                        button.classList.remove("bg-white", "text-black");
-                        button.classList.add("bg-black", "text-white");
-                    } else {
-                        button.classList.remove("bg-black", "text-white");
-                        button.classList.add("bg-white", "text-black");
-                    }
-
-                });
-
-            /* SAVE LANGUAGE */
-            localStorage.setItem("tachar-language", language);
+            try { localStorage.setItem("tachar-language", language); } catch (e) {}
 
         }
 
-
-        /* LOAD SAVED LANGUAGE */
-
-        const savedLanguage =
-            localStorage.getItem("tachar-language") || "fa";
-
+        let savedLanguage = "fa";
+        try { savedLanguage = localStorage.getItem("tachar-language") || "fa"; } catch (e) {}
         setLanguage(savedLanguage);
 
 
-        /* MOBILE MENU */
+        /* MOBILE MENU: با کلیک روی لینک یا بیرون از منو بسته می‌شود */
 
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
 
         if (menuBtn && mobileMenu) {
 
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
+            const closeMenu = () => {
+                mobileMenu.classList.add("hidden");
+                menuBtn.setAttribute("aria-expanded", "false");
+            };
+
+            menuBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.toggle("hidden");
+                menuBtn.setAttribute("aria-expanded", String(!isHidden));
+            });
+
+            mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+
+            document.addEventListener("click", (e) => {
+                if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+            });
+
+            /* اگر صفحه به اندازه دسکتاپ بزرگ شد (مثلاً چرخش تبلت) منو بسته شود */
+            window.addEventListener("resize", () => {
+                if (window.innerWidth >= 1024) closeMenu();
             });
 
         }
