@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تچر سرامیک | تماس با ما</title>
+
+    <meta name="description"
+          content="تاچار سرامیک، مجموعه بازرگانی مرادی در زمینه تأمین و عرضه کاشی و سرامیک ساختمانی. راه‌های ارتباطی، آدرس و شماره تماس.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ================= FONTS ================= -->
+      <link rel="stylesheet" href="./src/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazir: ['Vazirmatn', 'Arial', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+        body { margin: 0; font-family: Vazirmatn, Arial, sans-serif; }
+        body.fa { font-family: Vazirmatn, Arial, sans-serif; }
+        body.en { font-family: Montserrat, Arial, sans-serif; }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .dark-glass {
+            background: rgba(20, 20, 20, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .fixed-layout { direction: ltr !important; }
+        .language-text { direction: rtl; }
+        body.en .language-text { direction: ltr; }
+
+        .contact-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            background: rgba(255,255,255,0.88);
+        }
+
+        @media (max-width: 767px) { .desktop-menu { display: none !important; } }
+    </style>
+</head>
+
+<body class="fa min-h-screen text-gray-900">
+
+    <!-- BACKGROUND -->
+    <div class="fixed inset-0 -z-20 bg-cover bg-center"
+         style="background-image: url('./img/ChatGPT Image Sep 2, 2026, 11_17_46 AM.png');"></div>
+
+    <!-- لایه سفید روی بک گراند -->
+    <div class="fixed inset-0 -z-10 bg-white/30"></div>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+        <nav class="glass max-w-7xl mx-auto rounded-2xl px-6 py-4 shadow-lg">
+
+            <div class="flex items-center justify-between">
+
+                <!-- LOGO -->
+                <a href="#" class="text-2xl font-black tracking-wide">TACHAR</a>
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="./mew.html" class="hover:text-gray-500 transition">
+                        <span data-fa="خانه" data-en="Home">خانه</span>
+                    </a>
+                    <a href="./cutalog.html" class="hover:text-gray-500 transition">
+                        <span data-fa="محصولات" data-en="Products">محصولات</span>
+                    </a>
+                    <a href="#about" class="hover:text-gray-500 transition">
+                        <span data-fa="درباره ما" data-en="About Us">درباره ما</span>
+                    </a>
+                    <a href="./cont.html" class="hover:text-gray-500 transition">
+                        <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+                    </a>
+                </div>
+
+                <!-- CTA -->
+                <a href="#contact" class="hidden md:block bg-black text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition">
+                    <span data-fa="درخواست مشاوره" data-en="Request a Consultation">درخواست مشاوره</span>
+                </a>
+
+                <!-- LANGUAGE - DESKTOP -->
+                <div class="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1">
+                    <button onclick="setLanguage('fa')" class="lang-fa-btn px-3 py-1.5 rounded-lg bg-black text-white text-xs font-bold transition-all duration-300">FA</button>
+                    <button onclick="setLanguage('en')" class="lang-en-btn px-3 py-1.5 rounded-lg bg-white text-black text-xs font-bold transition-all duration-300">EN</button>
+                </div>
+
+                <!-- MOBILE BUTTON -->
+                <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div id="mobileMenu" class="hidden md:hidden pt-5">
+                <div class="flex flex-col gap-4 text-sm">
+                    <a href="./mew.html"><span data-fa="خانه" data-en="Home">خانه</span></a>
+                    <a href="./cutalog.html"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
+                    <a href="#about"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
+                    <a href="./cont.html"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
+                </div>
+
+                <!-- LANGUAGE - MOBILE -->
+                <div class="flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1 mt-5 w-fit">
+                    <button onclick="setLanguage('fa')" class="lang-fa-btn px-4 py-1.5 rounded-lg bg-black text-white text-xs font-bold transition-all duration-300">FA</button>
+                    <button onclick="setLanguage('en')" class="lang-en-btn px-4 py-1.5 rounded-lg bg-white text-black text-xs font-bold transition-all duration-300">EN</button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+    <main class="relative z-10 fixed-layout">
+
+        <!-- Hero -->
+        <section class="max-w-7xl mx-auto px-6 pt-32 pb-12 text-center">
+
+            <p class="text-sm tracking-[0.3em] text-gray-500 mb-4">TACHAR CERAMIC</p>
+
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 language-text"
+                data-fa="ارتباط با ما" data-en="Contact Us">
+                ارتباط با ما
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-500 leading-8 language-text"
+               data-fa="برای دریافت اطلاعات بیشتر درباره محصولات، همکاری و استعلام قیمت می‌توانید از طریق راه‌های ارتباطی زیر با ما در تماس باشید."
+               data-en="For more information about our products, collaboration opportunities, or price quotes, you can reach us through the contact channels below.">
+                برای دریافت اطلاعات بیشتر درباره محصولات، همکاری و استعلام قیمت
+                می‌توانید از طریق راه‌های ارتباطی زیر با ما در تماس باشید.
+            </p>
+
+        </section>
+
+        <!-- Contact Cards -->
+        <section class="max-w-6xl mx-auto px-6 pb-20">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Address -->
+                <div class="contact-card glass rounded-3xl p-7 text-center">
+
+                    <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gray-900 text-white flex items-center justify-center text-2xl">
+                        📍
+                    </div>
+
+                    <h3 class="text-lg font-bold mb-3 language-text"
+                        data-fa="آدرس دفتر" data-en="Office Address">
+                        آدرس دفتر
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-7 language-text"
+                       data-fa="آدرس دفتر را اینجا وارد کنید" data-en="Enter the office address here">
+                        آدرس دفتر را اینجا وارد کنید
+                    </p>
+
+                    <!-- لینک مسیریابی را اینجا قرار بده -->
+                <a
+    href="https://maps.app.goo.gl/XGcaidK2yhM8doK18"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="position: relative; z-index: 9999;"
+    class="inline-block mt-5 text-sm font-semibold hover:text-gray-500 transition language-text"
+    data-fa="مشاهده روی نقشه ← شعبه 1"
+    data-en="View on Map → first branch">
+    مشاهده روی نقشه ←
+</a>
+                <a
+    href="https://maps.app.goo.gl/t3Ju3wakpGdfaKtv7"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="position: relative; z-index: 9999;"
+    class="inline-block mt-5 text-sm font-semibold hover:text-gray-500 transition language-text"
+    data-fa="مشاهده روی نقشه ← شعبه 2"
+    data-en="View on Map → second branch">
+    مشاهده روی نقشه ←
+</a>
+
+                </div>
+
+                
+
+                <!-- Phone -->
+                <div class="contact-card glass rounded-3xl p-7 text-center">
+
+                    <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gray-900 text-white flex items-center justify-center text-2xl">
+                        ☎
+                    </div>
+
+                    <h3 class="text-lg font-bold mb-3 language-text"
+                        data-fa="تماس با دفتر" data-en="Call the Office">
+                        تماس با دفتر
+                    </h3>
+
+                    <div class="space-y-2 text-gray-500 text-sm" dir="ltr">
+                        <!-- شماره اول -->
+                        <a href="tel:" class="block hover:text-gray-900 transition">
+                            989175506691
+                        </a>
+                        <!-- شماره دوم -->
+                        <a href="tel:" class="block hover:text-gray-900 transition">
+                            989173500145
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="contact-card glass rounded-3xl p-7 text-center">
+
+                    <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gray-900 text-white flex items-center justify-center text-2xl">
+                        💬
+                    </div>
+
+                    <h3 class="text-lg font-bold mb-3 language-text"
+                        data-fa="واتساپ" data-en="WhatsApp">
+                        واتساپ
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-7 language-text"
+                       data-fa="برای ارتباط سریع و دریافت مشاوره از طریق واتساپ با ما در تماس باشید."
+                       data-en="For quick contact and consultation, reach us on WhatsApp.">
+                        برای ارتباط سریع و دریافت مشاوره
+                        از طریق واتساپ با ما در تماس باشید.
+                    </p>
+
+                    <!-- شماره واتساپ را در لینک قرار بده -->
+                    <a href="https://wa.me/989175506691" target="_blank"
+                       class="inline-block mt-5 text-sm font-semibold hover:text-gray-500 transition language-text"
+                       data-fa="پیام در واتساپ ←" data-en="Message on WhatsApp →">
+                        پیام در واتساپ ←
+                    </a>
+
+                </div>
+
+                <!-- Instagram -->
+                <div class="contact-card glass rounded-3xl p-7 text-center">
+
+                    <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gray-900 text-white flex items-center justify-center text-2xl">
+                        ◎
+                    </div>
+
+                    <h3 class="text-lg font-bold mb-3 language-text"
+                        data-fa="اینستاگرام" data-en="Instagram">
+                        اینستاگرام
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-7 language-text"
+                       data-fa="برای مشاهده محصولات و جدیدترین اخبار مجموعه ما را دنبال کنید."
+                       data-en="Follow us to see our latest products and news.">
+                        برای مشاهده محصولات و جدیدترین
+                        اخبار مجموعه ما را دنبال کنید.
+                    </p>
+
+                    <!-- آیدی اینستاگرام را اینجا قرار بده -->
+                    <a href="https://instagram.com/tacharceram" target="_blank" target="_blank"
+                       class="inline-block mt-5 text-sm font-semibold hover:text-gray-500 transition language-text"
+                       data-fa="مشاهده اینستاگرام ←" data-en="View Instagram →">
+                        مشاهده اینستاگرام ←
+                    </a>
+
+                </div>
+
+            </div>
+    
+
+            <!-- Bottom Contact Section -->
+            <div class="mt-8 glass rounded-3xl p-8 md:p-12">
+
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+
+                    <!-- Text -->
+                    <div>
+                        <p class="text-sm tracking-widest text-gray-500 mb-3">CONTACT US</p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mb-5 language-text"
+                            data-fa="آماده همکاری با شما هستیم" data-en="Ready to Work With You">
+                            آماده همکاری با شما هستیم
+                        </h2>
+
+                        <p class="text-gray-500 leading-8 language-text"
+                           data-fa="جهت دریافت کاتالوگ، استعلام قیمت، مشاوره خرید و همکاری با مجموعه Tachar Ceramic با ما تماس بگیرید."
+                           data-en="Contact us to receive our catalog, request a price quote, get purchase consultation, or explore collaboration with Tachar Ceramic.">
+                            جهت دریافت کاتالوگ، استعلام قیمت، مشاوره خرید و
+                            همکاری با مجموعه Tachar Ceramic با ما تماس بگیرید.
+                        </p>
+                    </div>
+
+                    <!-- Quick Buttons -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="tel:989175506688"
+                           class="rounded-2xl bg-gray-900 text-white py-4 text-center hover:bg-gray-700 transition language-text"
+                           data-fa="تماس با دفتر" data-en="Call the Office">
+                            تماس با دفتر
+                        </a>
+
+                        <a href="https://wa.me/989175506691" target="_blank"
+                           class="rounded-2xl border border-gray-900 py-4 text-center hover:bg-gray-900 hover:text-white transition language-text"
+                           data-fa="واتساپ" data-en="WhatsApp">
+                            واتساپ
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="px-5 pb-6 pt-16">
+        <div class="max-w-7xl mx-auto bg-black text-white rounded-[2rem] overflow-hidden">
+            <div class="px-7 py-10 md:px-12 md:py-12">
+
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+
+                    <!-- BRAND -->
+                    <div>
+                        <h2 class="text-2xl font-black tracking-[0.2em]">TACHAR</h2>
+                        <h2 class="text-2xl font-black tracking-[0.2em]">تچر</h2>
+                        <p class="text-gray-400 text-sm mt-3"
+                           data-fa="انتخابی برای فضاهای خاص" data-en="A Choice For Exceptional Spaces">
+                            انتخابی برای فضاهای خاص
+                        </p>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>
+                                <span>شیراز, بلوار صنایع، بین کوچه 6 و 8</span><br/>
+                                <span>ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی</span>
+                            </li>
+                            <li class="flex-col items-center">
+                                <span>09175506688</span><br>
+                                <span>09177388125</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span>tacharcermics@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- LINKS -->
+                    <div class="flex flex-wrap gap-8 text-sm">
+                        <a href="./mew.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="خانه" data-en="Home">خانه</span>
+                        </a>
+                        <a href="./cutalog.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="محصولات" data-en="Products">محصولات</span>
+                        </a>
+                        <a href="#about" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="درباره ما" data-en="About Us">درباره ما</span>
+                        </a>
+                        <a href="./cont.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+                        </a>
+                    </div>
+
+                    <!-- SOCIAL -->
+                    <div class="flex items-center gap-3">
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/tacharceram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                           class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+                            </svg>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/989175506691" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                           class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                                <path d="M8.5 8.5c.2-.4.5-.4.8-.4h.4c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3 0 .6-.4.8-.4.3-1 .4-1.5.2-2.2-.6-4.5-2.9-5.1-5.1-.2-.5-.1-1.1.2-1.5Z"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="border-t border-white/10 mt-10 pt-5">
+                    <div class="flex flex-col md:flex-row justify-between gap-3 text-xs text-gray-500">
+                        <p data-fa="© ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است."
+                           data-en="© 2026 Tachar Ceramic. All rights reserved.">
+                            © ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است.
+                        </p>
+                        <p data-fa="سرامیک • کاشی • طراحی" data-en="Ceramic • Tile • Design">
+                            سرامیک • کاشی • طراحی
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script>
+
+        /* ================= MOBILE MENU ================= */
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+        /* ================= LANGUAGE ================= */
+        function setLanguage(language) {
+
+            const elements = document.querySelectorAll("[data-fa][data-en]");
+            elements.forEach(el => {
+                el.textContent = language === "en" ? el.getAttribute("data-en") : el.getAttribute("data-fa");
+            });
+
+            document.body.classList.remove("fa", "en");
+            document.body.classList.add(language);
+            document.documentElement.lang = language;
+
+            const faBtns = document.querySelectorAll(".lang-fa-btn");
+            const enBtns = document.querySelectorAll(".lang-en-btn");
+
+            if (language === "en") {
+                enBtns.forEach(btn => {
+                    btn.classList.remove("bg-white", "text-black");
+                    btn.classList.add("bg-black", "text-white");
+                });
+                faBtns.forEach(btn => {
+                    btn.classList.remove("bg-black", "text-white");
+                    btn.classList.add("bg-white", "text-black");
+                });
+                document.title = "Tachar Ceramic | Contact Us";
+            } else {
+                faBtns.forEach(btn => {
+                    btn.classList.remove("bg-white", "text-black");
+                    btn.classList.add("bg-black", "text-white");
+                });
+                enBtns.forEach(btn => {
+                    btn.classList.remove("bg-black", "text-white");
+                    btn.classList.add("bg-white", "text-black");
+                });
+                document.title = "تچر سرامیک | تماس با ما";
+            }
+
+            localStorage.setItem("tachar-language", language);
+        }
+
+        /* ================= LOAD SAVED LANGUAGE ================= */
+        const savedLanguage = localStorage.getItem("tachar-language") || "fa";
+        setLanguage(savedLanguage);
+
+    </script>
+
+</body>
+</html>

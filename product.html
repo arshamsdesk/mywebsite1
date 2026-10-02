@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>تچر سرامیک | محصول</title>
+  <meta id="metaDescription" name="description" content="مشخصات محصول در تچر سرامیک.">
+  <link id="canonicalLink" rel="canonical" href="https://tacharceramic.com/product.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            vazir: ['Vazirmatn', 'Arial', 'sans-serif'],
+            montserrat: ['Montserrat', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Database (must expose getProductIdFromURL / getProductById) -->
+  <script src="./products60120.js"></script>
+
+  <!-- Dynamic SEO schema (filled by JS) -->
+  <script id="productSchema" type="application/ld+json">{}</script>
+
+  <style>
+    * { scroll-behavior: smooth; box-sizing: border-box; }
+    html { direction: rtl; }
+    body { margin: 0; font-family: Vazirmatn, Arial, sans-serif; }
+    body.en { font-family: Montserrat, Arial, sans-serif; }
+
+    .glass {
+      background: rgba(255, 255, 255, .72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, .7);
+    }
+    .dark-glass {
+      background: rgba(20, 20, 20, .82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+    }
+    .spec-row:last-child { border-bottom: 0; }
+  </style>
+</head>
+
+<body class="fa min-h-screen text-gray-900">
+
+  <!-- ===== BACKGROUND ===== -->
+  <div class="fixed inset-0 -z-20 bg-cover bg-center"
+       style="background-image:url('./img/ChatGPT Image Sep 2, 2026, 11_17_46 AM.png');"></div>
+  <div class="fixed inset-0 -z-10 bg-white/30"></div>
+
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+    <nav class="glass max-w-7xl mx-auto rounded-2xl px-6 py-4 shadow-lg">
+
+      <div class="flex items-center justify-between">
+
+        <a href="./mew.html" class="text-2xl font-black tracking-wide">TACHAR</a>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="./index.html" class="hover:text-gray-500 transition"><span data-fa="خانه" data-en="Home">خانه</span></a>
+          <a href="./cutalog.html" class="hover:text-gray-500 transition"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
+          <a href="./index.html" class="hover:text-gray-500 transition"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
+          <a href="./cont.html" class="hover:text-gray-500 transition"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
+        </div>
+
+        <!-- Consultation button -->
+        <a href="#contact" class="hidden md:block bg-black text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition">
+          <span data-fa="درخواست مشاوره" data-en="Request a Consultation">درخواست مشاوره</span>
+        </a>
+
+        <!-- Language switch (desktop) -->
+        <div class="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1">
+          <button onclick="setLanguage('fa')" data-lang-btn="fa" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300">FA</button>
+          <button onclick="setLanguage('en')" data-lang-btn="en" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300">EN</button>
+        </div>
+
+        <button id="menuBtn" class="md:hidden text-2xl" aria-label="menu">☰</button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden pt-5">
+        <div class="flex flex-col gap-4 text-sm">
+          <a href="./mew.html"><span data-fa="خانه" data-en="Home">خانه</span></a>
+          <a href="./cutalog.html"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
+          <a href="./mew.html#about"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
+          <a href="./cont.html"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
+        </div>
+
+        <div class="flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1 mt-5 w-fit">
+          <button onclick="setLanguage('fa')" data-lang-btn="fa" class="px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-300">FA</button>
+          <button onclick="setLanguage('en')" data-lang-btn="en" class="px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-300">EN</button>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <section class="px-6 pt-32 pb-10">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Breadcrumb -->
+        <nav class="text-sm text-gray-600 mb-6 flex flex-wrap gap-2" aria-label="breadcrumb">
+          <a href="./mew.html" class="hover:text-black"><span data-fa="خانه" data-en="Home">خانه</span></a>
+          <span>/</span>
+          <a href="./cutalog.html" class="hover:text-black"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
+          <span>/</span>
+          <span id="breadcrumbProduct" class="text-gray-900 font-semibold">محصول</span>
+        </nav>
+
+        <!-- Product image -->
+        <div class="glass rounded-[2rem] p-3 shadow-xl">
+          <img id="productImage" src="" alt="" title=""
+               class="w-full h-[320px] sm:h-[520px] lg:h-[640px] object-cover rounded-[1.5rem]">
+        </div>
+
+        <!-- Title + specs -->
+        <div class="glass rounded-[2rem] p-8 md:p-12 mt-6">
+
+          <div class="flex flex-wrap items-start justify-between gap-6 mb-8">
+            <div>
+              <p id="productCollection" class="text-sm text-gray-500 mb-2">مجموعه</p>
+              <h1 class="text-3xl md:text-5xl font-black leading-tight">
+                <span id="productName">محصول</span>
+                <span id="productSize" class="block text-gray-500 text-2xl md:text-3xl mt-2"></span>
+              </h1>
+            </div>
+
+            <a href="#contact" class="bg-black text-white px-7 py-4 rounded-xl hover:bg-gray-800 transition shadow-xl">
+              <span data-fa="استعلام قیمت" data-en="Request a Quote">استعلام قیمت</span>
+            </a>
+          </div>
+
+          <h2 class="text-xl font-bold mb-2" data-fa="مشخصات فنی" data-en="Technical Specifications">مشخصات فنی</h2>
+
+          <div class="grid md:grid-cols-2 gap-x-14">
+            <div>
+              <div class="spec-row">
+                <span class="text-gray-500" data-fa="ابعاد" data-en="Dimensions">ابعاد</span>
+                <strong id="specDimensions" dir="ltr"></strong>
+              </div>
+              <div class="spec-row">
+                <span class="text-gray-500" data-fa="نوع" data-en="Type">نوع</span>
+                <strong id="specType"></strong>
+              </div>
+              <div class="spec-row">
+                <span class="text-gray-500" data-fa="نوع خاک" data-en="Clay Body">نوع خاک</span>
+                <strong id="specBody"></strong>
+              </div>
+            </div>
+
+            <div>
+              <div class="spec-row">
+                <span class="text-gray-500" data-fa="درجه" data-en="Grade">درجه</span>
+                <strong id="specGrade"></strong>
+              </div>
+              <div class="spec-row">
+                <span class="text-gray-500" data-fa="کارخانه" data-en="Factory">کارخانه</span>
+                <strong id="specFactory"></strong>
+              </div>
+              <div class="spec-row">
+                <span class="text-gray-500" data-fa="سطح" data-en="Surface">سطح</span>
+                <strong id="specSurface"></strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature chips -->
+          <div id="productFeatures" class="flex flex-wrap gap-3 mt-8"></div>
+        </div>
+
+        <!-- SEO text + FAQ -->
+        <article class="glass rounded-[2rem] p-8 md:p-12 mt-6">
+
+          <h2 id="seoTitle" class="text-2xl md:text-3xl font-bold mb-5"></h2>
+          <p id="seoDescription" class="text-gray-700 leading-9"></p>
+
+          <h3 class="text-xl font-bold mt-8 mb-3"
+              data-fa="مشخصات و ویژگی‌های محصول" data-en="Product Specifications & Features">مشخصات و ویژگی‌های محصول</h3>
+          <p id="seoFeatures" class="text-gray-700 leading-9"></p>
+
+          <h3 class="text-xl font-bold mt-8 mb-3" data-fa="کاربردها" data-en="Applications">کاربردها</h3>
+          <p id="seoApplications" class="text-gray-700 leading-9"></p>
+
+          <h3 class="text-xl font-bold mt-8 mb-4" data-fa="سوالات متداول" data-en="FAQ">سوالات متداول</h3>
+
+          <div class="space-y-3">
+            <details class="glass rounded-2xl p-5">
+              <summary class="font-bold cursor-pointer"
+                       data-fa="سرامیک این محصول چه مشخصاتی دارد؟"
+                       data-en="What are the specifications of this product?">سرامیک این محصول چه مشخصاتی دارد؟</summary>
+              <p id="faqSpecs" class="mt-3 text-gray-700 leading-8"></p>
+            </details>
+
+            <details class="glass rounded-2xl p-5">
+              <summary class="font-bold cursor-pointer"
+                       data-fa="این محصول برای چه فضاهایی مناسب است؟"
+                       data-en="Where is this product suitable?">این محصول برای چه فضاهایی مناسب است؟</summary>
+              <p id="faqApplications" class="mt-3 text-gray-700 leading-8"></p>
+            </details>
+
+            <details class="glass rounded-2xl p-5">
+              <summary class="font-bold cursor-pointer"
+                       data-fa="قیمت را از کجا بگیرم؟"
+                       data-en="How can I get the price?">قیمت را از کجا بگیرم؟</summary>
+              <p class="mt-3 text-gray-700 leading-8"
+                 data-fa="قیمت بر اساس متراژ و شرایط روز تعیین می‌شود؛ برای استعلام قیمت با کارشناسان تچر سرامیک تماس بگیرید."
+                 data-en="Prices depend on quantity and current market conditions. Contact Tachar Ceramic for a quotation.">قیمت بر اساس متراژ و شرایط روز تعیین می‌شود؛ برای استعلام قیمت با کارشناسان تچر سرامیک تماس بگیرید.</p>
+            </details>
+          </div>
+
+        </article>
+
+        <!-- CTA -->
+        <div id="contact" class="dark-glass text-white rounded-[2rem] p-10 md:p-14 text-center mt-6">
+          <h2 class="text-3xl md:text-4xl font-black"
+              data-fa="این محصول را برای پروژه‌تان می‌خواهید؟"
+              data-en="Want This Product For Your Project?">این محصول را برای پروژه‌تان می‌خواهید؟</h2>
+
+          <p class="text-gray-300 mt-4"
+             data-fa="برای دریافت قیمت و مشاوره با ما در ارتباط باشید."
+             data-en="Contact us for pricing and consultation.">برای دریافت قیمت و مشاوره با ما در ارتباط باشید.</p>
+
+          <a href="tel:09175506688"
+             class="inline-block mt-7 bg-white text-black px-8 py-4 rounded-xl hover:bg-gray-200 transition">
+            <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="px-5 pb-6 pt-16">
+    <div class="max-w-7xl mx-auto bg-black text-white rounded-[2rem] overflow-hidden">
+      <div class="px-7 py-10 md:px-12 md:py-12">
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+
+          <!-- Brand -->
+          <div>
+            <h2 class="text-2xl font-black tracking-[0.2em]">TACHAR</h2>
+            <h2 class="text-2xl font-black tracking-[0.2em]">تچر</h2>
+            <p class="text-gray-400 text-sm mt-3"
+               data-fa="انتخابی برای فضاهای خاص"
+               data-en="A Choice For Exceptional Spaces">انتخابی برای فضاهای خاص</p>
+          </div>
+
+          <!-- Contact info -->
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <span>شیراز, بلوار صنایع، بین کوچه 6 و 8</span><br>
+              <span>ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی</span>
+            </li>
+            <li>
+              <span>09175506688</span><br>
+              <span>09177388125</span>
+            </li>
+            <li>
+              <span>tacharcermics@gmail.com</span>
+            </li>
+          </ul>
+
+          <!-- Links -->
+          <div class="flex flex-wrap gap-8 text-sm">
+            <a href="./mew.html" class="text-gray-300 hover:text-white transition"><span data-fa="خانه" data-en="Home">خانه</span></a>
+            <a href="./cutalog.html" class="text-gray-300 hover:text-white transition"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
+            <a href="./mew.html#about" class="text-gray-300 hover:text-white transition"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
+            <a href="./cont.html" class="text-gray-300 hover:text-white transition"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
+          </div>
+
+          <!-- Social -->
+          <div class="flex items-center gap-3">
+
+            <a href="https://instagram.com/tacharceram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+               class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+              </svg>
+            </a>
+
+            <a href="https://wa.me/989175506691" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+               class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                <path d="M8.5 8.5c.2-.4.5-.4.8-.4h.4c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3 0 .6-.4.8-.4.3-1 .4-1.5.2-2.2-.6-4.5-2.9-5.1-5.1-.2-.5-.1-1.1.2-1.5Z"></path>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-white/10 mt-10 pt-5">
+          <div class="flex flex-col md:flex-row justify-between gap-3 text-xs text-gray-500">
+            <p data-fa="© ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است."
+               data-en="© 2026 Tachar Ceramic. All rights reserved.">© ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است.</p>
+            <p data-fa="سرامیک • کاشی • طراحی"
+               data-en="Ceramic • Tile • Design">سرامیک • کاشی • طراحی</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    /* ---------- Product lookup ---------- */
+    const currentProduct = getProductById(getProductIdFromURL());
+
+    if (!currentProduct) {
+      document.body.innerHTML = `
+        <div class="min-h-screen flex items-center justify-center p-6">
+          <div class="glass rounded-[2rem] p-10 text-center">
+            <h1 class="text-3xl font-black mb-4">محصول پیدا نشد</h1>
+            <p class="text-gray-600 mb-6">محصول مورد نظر پیدا نشد.</p>
+            <a href="./cutalog.html" class="bg-black text-white px-6 py-3 rounded-xl">بازگشت به کاتالوگ</a>
+          </div>
+        </div>`;
+      throw new Error("Product not found");
+    }
+
+    /* ---------- State ---------- */
+    let currentLang = "fa";
+    try { currentLang = localStorage.getItem("tachar-language") || "fa"; } catch (e) {}
+
+    /* ---------- Helpers ---------- */
+    const $ = (id) => document.getElementById(id);
+
+    const setText = (id, value) => { $(id).textContent = value; };
+
+    const toArray = (value) => Array.isArray(value) ? value : (value ? [value] : []);
+
+    const getCurrentData = () =>
+      currentProduct[currentLang] || currentProduct.fa || {};
+
+    /* ---------- Render product ---------- */
+    function renderProduct() {
+      const data = getCurrentData();
+      const isFa = currentLang === "fa";
+
+      const name         = data.name || currentProduct.code;
+      const collection   = data.collection || "";
+      const size         = data.size || "";
+      const type         = data.type || "";
+      const body         = data.body || "";
+      const grade        = data.grade || "";
+      const factory      = data.factory || "";
+      const surface      = data.surface || "";
+      const description  = data.description || "";
+      const applications = data.applications || "";
+      const features     = toArray(data.features);
+
+      /* Image */
+      const image = $("productImage");
+      image.src   = currentProduct.image;
+      image.alt   = `${name} ${size} | تچر سرامیک`;
+      image.title = `${name} ${size}`;
+
+      /* Title block */
+      setText("breadcrumbProduct", name);
+      setText("productCollection", collection);
+      setText("productName", name);
+      setText("productSize", size);
+
+      /* Specs */
+      setText("specDimensions", size);
+      setText("specType", type);
+      setText("specBody", body);
+      setText("specGrade", grade);
+      setText("specFactory", factory);
+      setText("specSurface", surface);
+
+      /* Feature chips (built with DOM, no innerHTML) */
+      const featureBox = $("productFeatures");
+      featureBox.replaceChildren(...features.map((feature) => {
+        const chip = document.createElement("span");
+        chip.className = "glass px-4 py-2 rounded-full text-sm";
+        chip.textContent = `✦ ${feature}`;
+        return chip;
+      }));
+
+      /* SEO text */
+      setText("seoTitle", isFa
+        ? `معرفی ${name} ${size} ${type}`
+        : `About ${name} ${size} ${type}`);
+
+      setText("seoDescription", description);
+      setText("seoFeatures", features.length ? features.join(isFa ? "، " : ", ") : description);
+      setText("seoApplications", applications);
+
+      /* FAQ */
+      setText("faqSpecs", isFa
+        ? `این محصول در ابعاد ${size}، با نوع ${type}، ${body}، درجه ${grade}، کارخانه ${factory} و سطح ${surface} عرضه می‌شود.`
+        : `This product is available in ${size} size, ${type}, ${body}, Grade ${grade}, from ${factory}, with a ${surface} surface.`);
+
+      setText("faqApplications", applications);
+
+      /* Page title + meta */
+      document.title = isFa
+        ? `${name} ${size} ${type} درجه ${grade} | تچر سرامیک`
+        : `${name} ${size} ${type} Grade ${grade} | Tachar Ceramic`;
+
+      $("metaDescription").content = description || `${name} ${size} | تچر سرامیک`;
+      $("canonicalLink").href = `https://tacharceramic.com/product.html?id=${currentProduct.id}`;
+
+      /* JSON-LD */
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": `${name} ${size}`,
+        "image": [new URL(currentProduct.image, window.location.href).href],
+        "description": description,
+        "sku": currentProduct.code,
+        "category": "کاشی و سرامیک",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "IRR",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@type": "Organization", "name": "تچر سرامیک" }
+        }
+      };
+      setText("productSchema", JSON.stringify(schema));
+    }
+
+    /* ---------- Language ---------- */
+    function updateLangButtons(language) {
+      document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+        const active = btn.dataset.langBtn === language;
+        btn.classList.toggle("bg-black", active);
+        btn.classList.toggle("text-white", active);
+        btn.classList.toggle("bg-white", !active);
+        btn.classList.toggle("text-black", !active);
+      });
+    }
+
+    function setLanguage(language) {
+      currentLang = language;
+
+      document.documentElement.lang = language;
+      document.body.classList.remove("fa", "en");
+      document.body.classList.add(language);
+
+      /* Static texts */
+      document.querySelectorAll("[data-fa][data-en]").forEach((el) => {
+        el.textContent = el.getAttribute(language === "en" ? "data-en" : "data-fa");
+      });
+
+      updateLangButtons(language);
+
+      try { localStorage.setItem("tachar-language", language); } catch (e) {}
+
+      /* Dynamic product data */
+      renderProduct();
+    }
+
+    /* ---------- Mobile menu ---------- */
+    $("menuBtn").addEventListener("click", () => {
+      $("mobileMenu").classList.toggle("hidden");
+    });
+
+    /* ---------- Init ---------- */
+    setLanguage(currentLang);   // also calls renderProduct()
+  </script>
+
+</body>
+</html>

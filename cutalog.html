@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="pageTitle">تاچار سرامیک | کاتالوگ</title>
+
+    <meta
+        name="description"
+        id="pageDescription"
+        content="کاتالوگ سرامیک تاچار؛ مشاهده محصولات بر اساس ابعاد و سایز سرامیک."
+    >
+
+    <link rel="stylesheet" href="./src/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- ================= FONTS ================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    fontFamily: {
+
+                        vazir: [
+                            'Vazirmatn',
+                            'Arial',
+                            'sans-serif'
+                        ],
+
+                        montserrat: [
+                            'Montserrat',
+                            'Arial',
+                            'sans-serif'
+                        ]
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Vazirmatn,
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* ================= LANGUAGE FONT ================= */
+
+        body.fa {
+
+            font-family:
+                Vazirmatn,
+                Arial,
+                sans-serif;
+
+        }
+
+
+        body.en {
+
+            font-family:
+                Montserrat,
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* ================= GLASS ================= */
+
+        .glass {
+
+            background:
+                rgba(255, 255, 255, 0.72);
+
+            backdrop-filter:
+                blur(14px);
+
+            -webkit-backdrop-filter:
+                blur(14px);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.7);
+
+        }
+
+
+        .dark-glass {
+
+            background:
+                rgba(20, 20, 20, 0.82);
+
+            backdrop-filter:
+                blur(14px);
+
+            -webkit-backdrop-filter:
+                blur(14px);
+
+        }
+
+
+        /* =====================================================
+           LAYOUT NEVER CHANGES
+        ====================================================== */
+
+        .fixed-layout {
+
+            direction: ltr !important;
+
+        }
+
+
+        .language-text {
+
+            direction: rtl;
+
+        }
+
+
+        body.en .language-text {
+
+            direction: ltr;
+
+        }
+
+
+        /* ================= CATALOG ================= */
+
+        .catalog-card {
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+
+        }
+
+
+        .catalog-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.12);
+
+            background:
+                rgba(255, 255, 255, 0.88);
+
+        }
+
+
+        .catalog-image {
+
+            transition:
+                transform 0.6s ease;
+
+        }
+
+
+        .catalog-card:hover .catalog-image {
+
+            transform:
+                scale(1.04);
+
+        }
+
+
+        .size-card {
+
+            scroll-margin-top: 120px;
+
+        }
+
+
+        /* ================= LANGUAGE BUTTONS ================= */
+
+        .lang-fa-btn,
+        .lang-en-btn {
+
+            min-width: 42px;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 767px) {
+
+            .desktop-menu {
+
+                display: none !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="fa min-h-screen text-gray-900">
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+        class="fixed inset-0 -z-20 bg-cover bg-center bg-fixed"
+        style="
+            background-image:
+            url('./img/ChatGPT Image Sep 2, 2026, 11_17_46 AM.png');
+        ">
+    </div>
+
+
+    <!-- WHITE OVERLAY -->
+
+    <div class="fixed inset-0 -z-10 bg-white/30"></div>
+
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+
+        <nav
+            class="glass max-w-7xl mx-auto rounded-2xl px-6 py-4 shadow-lg">
+
+            <div class="flex items-center justify-between">
+
+
+                <!-- LOGO -->
+
+                <a
+                    href="./mew.html"
+                    class="text-2xl font-black tracking-wide">
+
+                    TACHAR
+
+                </a>
+
+
+
+                <!-- DESKTOP MENU -->
+
+                <div
+                    class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+                    <a
+                        href="./index.html"
+                        class="hover:text-gray-500 transition whitespace-nowrap">
+
+                        <span
+                            data-fa="خانه"
+                            data-en="Home">
+
+                            خانه
+
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="./cutalog.html"
+                        class="hover:text-gray-500 transition whitespace-nowrap">
+
+                        <span
+                            data-fa="محصولات"
+                            data-en="Products">
+
+                            محصولات
+
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="./mew.html#about"
+                        class="hover:text-gray-500 transition whitespace-nowrap">
+
+                        <span
+                            data-fa="درباره ما"
+                            data-en="About Us">
+
+                            درباره ما
+
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="./cont.html"
+                        class="hover:text-gray-500 transition whitespace-nowrap">
+
+                        <span
+                            data-fa="تماس با ما"
+                            data-en="Contact Us">
+
+                            تماس با ما
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- CTA -->
+
+                <a
+                    href="./cont.html"
+                    class="hidden md:block bg-black text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition whitespace-nowrap">
+
+                    <span
+                        data-fa="درخواست مشاوره"
+                        data-en="Request a Consultation">
+
+                        درخواست مشاوره
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- LANGUAGE - DESKTOP -->
+
+                <div
+                    class="hidden md:flex items-center gap-1
+                           bg-white/70 backdrop-blur-sm
+                           border border-black/10
+                           rounded-xl p-1">
+
+                    <button
+                        id="faBtn"
+                        onclick="setLanguage('fa')"
+                        class="lang-fa-btn px-3 py-1.5 rounded-lg
+                               bg-black text-white
+                               text-xs font-bold
+                               transition-all duration-300">
+
+                        FA
+
+                    </button>
+
+
+                    <button
+                        id="enBtn"
+                        onclick="setLanguage('en')"
+                        class="lang-en-btn px-3 py-1.5 rounded-lg
+                               bg-white text-black
+                               text-xs font-bold
+                               transition-all duration-300">
+
+                        EN
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- MOBILE BUTTON -->
+
+                <button
+                    id="menuBtn"
+                    class="md:hidden text-2xl"
+                    aria-label="Menu">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MOBILE MENU
+            ================================================== -->
+
+            <div
+                id="mobileMenu"
+                class="hidden md:hidden pt-5">
+
+                <div
+                    class="flex flex-col gap-4 text-sm">
+
+
+                    <a href="./mew.html">
+
+                        <span
+                            data-fa="خانه"
+                            data-en="Home">
+
+                            خانه
+
+                        </span>
+
+                    </a>
+
+
+                    <a href="./cutalog.html">
+
+                        <span
+                            data-fa="محصولات"
+                            data-en="Products">
+
+                            محصولات
+
+                        </span>
+
+                    </a>
+
+
+                    <a href="./mew.html#about">
+
+                        <span
+                            data-fa="درباره ما"
+                            data-en="About Us">
+
+                            درباره ما
+
+                        </span>
+
+                    </a>
+
+
+                    <a href="./cont.html">
+
+                        <span
+                            data-fa="تماس با ما"
+                            data-en="Contact Us">
+
+                            تماس با ما
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- MOBILE LANGUAGE -->
+
+                    <div
+                        class="flex items-center gap-1
+                               bg-white/70 backdrop-blur-sm
+                               border border-black/10
+                               rounded-xl p-1
+                               mt-2 w-fit">
+
+                        <button
+                            onclick="setLanguage('fa')"
+                            class="lang-fa-btn px-3 py-1.5 rounded-lg
+                                   bg-black text-white
+                                   text-xs font-bold
+                                   transition-all duration-300">
+
+                            FA
+
+                        </button>
+
+
+                        <button
+                            onclick="setLanguage('en')"
+                            class="lang-en-btn px-3 py-1.5 rounded-lg
+                                   bg-white text-black
+                                   text-xs font-bold
+                                   transition-all duration-300">
+
+                            EN
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="pt-32 fixed-layout">
+
+
+
+        <!-- ================= HERO ================= -->
+
+        <section
+            class="px-6 py-20 text-center">
+
+            <div
+                class="max-w-4xl mx-auto">
+
+                <p
+                    class="text-sm text-gray-500 tracking-[0.25em] mb-5">
+
+                    CATALOG
+
+                </p>
+
+
+                <h1
+                    class="text-5xl md:text-7xl font-black mb-6 language-text"
+                    data-fa="کاتالوگ سرامیک"
+                    data-en="Ceramic Catalog">
+
+                    کاتالوگ سرامیک
+
+                </h1>
+
+
+                <p
+                    class="text-gray-600 max-w-2xl mx-auto leading-8 language-text"
+                    data-fa="مجموعه سرامیک‌های تچر را بر اساس ابعاد مشاهده کنید."
+                    data-en="Explore the Tachar Ceramic collection by size.">
+
+                    مجموعه سرامیک‌های تچر را بر اساس ابعاد مشاهده کنید.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SIZE SELECTOR
+        ====================================================== -->
+
+        <section
+            class="px-6 pb-20">
+
+            <div
+                class="max-w-7xl mx-auto">
+
+
+                <div class="text-center mb-10">
+
+                    <h2
+                        class="text-3xl md:text-4xl font-black language-text"
+                        data-fa="انتخاب ابعاد"
+                        data-en="Choose a Size">
+
+                        انتخاب ابعاد
+
+                    </h2>
+
+
+                    <p
+                        class="text-gray-500 mt-3 text-sm language-text"
+                        data-fa="برای مشاهده محصولات هر ابعاد روی آن کلیک کنید."
+                        data-en="Click a size to view its products.">
+
+                        برای مشاهده محصولات هر ابعاد روی آن کلیک کنید.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- 4 COLUMNS -->
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+
+
+                    <!-- 60 x 120 -->
+
+                    <a
+                        href="./60-120.html"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            60 × 120
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 60 در 120"
+                            data-en="60 × 120 Ceramic">
+
+                            سرامیک 60 در 120
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 120 x 120 -->
+
+                    <a
+                        href="#size-120x120"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            120 × 120
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 120 در 120"
+                            data-en="120 × 120 Ceramic">
+
+                            سرامیک 120 در 120
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 80 x 80 -->
+
+                    <a
+                        href="#size-80x80"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            80 × 80
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 80 در 80"
+                            data-en="80 × 80 Ceramic">
+
+                            سرامیک 80 در 80
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 60 x 60 -->
+
+                    <a
+                        href="#size-60x60"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            60 × 60
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 60 در 60"
+                            data-en="60 × 60 Ceramic">
+
+                            سرامیک 60 در 60
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 40 x 120 -->
+
+                    <a
+                        href="#size-40x120"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            40 × 120
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 40 در 120"
+                            data-en="40 × 120 Ceramic">
+
+                            سرامیک 40 در 120
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 30 x 60 -->
+
+                    <a
+                        href="#size-30x60"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            30 × 60
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 30 در 60"
+                            data-en="30 × 60 Ceramic">
+
+                            سرامیک 30 در 60
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 90 x 90 -->
+
+                    <a
+                        href="#size-90x90"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            90 × 90
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 90 در 90"
+                            data-en="90 × 90 Ceramic">
+
+                            سرامیک 90 در 90
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- 20 x 120 -->
+
+                    <a
+                        href="#size-20x120"
+                        class="catalog-card glass rounded-3xl p-7 text-center">
+
+                        <div
+                            class="text-3xl md:text-4xl font-black">
+
+                            20 × 120
+
+                        </div>
+
+
+                        <p
+                            class="text-gray-500 text-sm mt-3 language-text"
+                            data-fa="سرامیک 20 در 120"
+                            data-en="20 × 120 Ceramic">
+
+                            سرامیک 20 در 120
+
+                        </p>
+
+
+                        <div class="mt-5 text-sm">
+                            ↓
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CATALOG PRODUCTS
+        ====================================================== -->
+
+        <section class="px-6 pb-24">
+
+            <div class="max-w-7xl mx-auto">
+
+
+
+                <!-- =================================================
+                     SIZE 60 × 120
+                ================================================== -->
+
+                <div
+                    id="size-60x120"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                60 × 120
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 120 × 120
+                ================================================== -->
+
+                <div
+                    id="size-120x120"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                120 × 120
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 80 × 80
+                ================================================== -->
+
+                <div
+                    id="size-80x80"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                80 × 80
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/Elvin-Nescafe-polish-80-160-copy-1024x576.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 60 × 60
+                ================================================== -->
+
+                <div
+                    id="size-60x60"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                60 × 60
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 40 × 120
+                ================================================== -->
+
+                <div
+                    id="size-40x120"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                40 × 120
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 30 × 60
+                ================================================== -->
+
+                <div
+                    id="size-30x60"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                30 × 60
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 90 × 90
+                ================================================== -->
+
+                <div
+                    id="size-90x90"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10 mb-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                90 × 90
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIZE 20 × 120
+                ================================================== -->
+
+                <div
+                    id="size-20x120"
+                    class="size-card glass rounded-[2rem] p-6 md:p-10">
+
+                    <div
+                        class="flex items-center justify-between mb-8">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-gray-500 tracking-widest mb-2">
+
+                                SIZE
+
+                            </p>
+
+
+                            <h2
+                                class="text-3xl md:text-4xl font-black">
+
+                                20 × 120
+
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="text-sm text-gray-500 language-text"
+                            data-fa="کاتالوگ محصولات"
+                            data-en="Product Catalog">
+
+                            کاتالوگ محصولات
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0003.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0007.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/IMG-20250904-WA0008.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+
+                        <div
+                            class="rounded-2xl overflow-hidden bg-white">
+
+                            <img
+                                src="./img/CASPIAN-LIGHT-GRAY-120-POL.jpg"
+                                class="catalog-image w-full aspect-square object-cover"
+                                alt="Ceramic">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="px-5 pb-6 pt-16">
+        <div class="max-w-7xl mx-auto bg-black text-white rounded-[2rem] overflow-hidden">
+            <div class="px-7 py-10 md:px-12 md:py-12">
+
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+
+                    <!-- BRAND -->
+                    <div>
+                        <h2 class="text-2xl font-black tracking-[0.2em]">TACHAR</h2>
+                        <h2 class="text-2xl font-black tracking-[0.2em]">تچر</h2>
+                        <p class="text-gray-400 text-sm mt-3"
+                           data-fa="انتخابی برای فضاهای خاص" data-en="A Choice For Exceptional Spaces">
+                            انتخابی برای فضاهای خاص
+                        </p>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>
+                                <span>شیراز, بلوار صنایع، بین کوچه 6 و 8</span><br/>
+                                <span>ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی</span>
+                            </li>
+                            <li class="flex-col items-center">
+                                <span>09175506688</span><br>
+                                <span>09177388125</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span>tacharcermics@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- LINKS -->
+                    <div class="flex flex-wrap gap-8 text-sm">
+                        <a href="./index.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="خانه" data-en="Home">خانه</span>
+                        </a>
+                        <a href="./cutalog.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="محصولات" data-en="Products">محصولات</span>
+                        </a>
+                        <a href="#about" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="درباره ما" data-en="About Us">درباره ما</span>
+                        </a>
+                        <a href="./cont.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+                        </a>
+                    </div>
+
+                    <!-- SOCIAL -->
+                    <div class="flex items-center gap-3">
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/tacharceram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                           class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+                            </svg>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/989175506691" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                           class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                                <path d="M8.5 8.5c.2-.4.5-.4.8-.4h.4c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3 0 .6-.4.8-.4.3-1 .4-1.5.2-2.2-.6-4.5-2.9-5.1-5.1-.2-.5-.1-1.1.2-1.5Z"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="border-t border-white/10 mt-10 pt-5">
+                    <div class="flex flex-col md:flex-row justify-between gap-3 text-xs text-gray-500">
+                        <p data-fa="© ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است."
+                           data-en="© 2026 Tachar Ceramic. All rights reserved.">
+                            © ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است.
+                        </p>
+                        <p data-fa="سرامیک • کاشی • طراحی" data-en="Ceramic • Tile • Design">
+                            سرامیک • کاشی • طراحی
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        menuBtn.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.toggle(
+                    "hidden"
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           LANGUAGE SYSTEM
+        ====================================================== */
+
+        function setLanguage(language) {
+
+
+            /* ---------------------------------------------
+               CHANGE ALL TEXT
+            --------------------------------------------- */
+
+            const elements =
+                document.querySelectorAll(
+                    "[data-fa][data-en]"
+                );
+
+
+            elements.forEach(
+                function (element) {
+
+                    if (language === "en") {
+
+                        element.textContent =
+                            element.getAttribute(
+                                "data-en"
+                            );
+
+                    }
+
+                    else {
+
+                        element.textContent =
+                            element.getAttribute(
+                                "data-fa"
+                            );
+
+                    }
+
+                }
+            );
+
+
+
+            /* ---------------------------------------------
+               CHANGE BODY LANGUAGE CLASS
+            --------------------------------------------- */
+
+            document.body.classList.remove(
+                "fa",
+                "en"
+            );
+
+
+            document.body.classList.add(
+                language
+            );
+
+
+
+            /* ---------------------------------------------
+               IMPORTANT
+               NEVER CHANGE DIR
+               LAYOUT STAYS FIXED
+            --------------------------------------------- */
+
+            document.documentElement.lang =
+                language;
+
+
+
+            /* ---------------------------------------------
+               UPDATE ALL FA BUTTONS
+            --------------------------------------------- */
+
+            const faButtons =
+                document.querySelectorAll(
+                    ".lang-fa-btn"
+                );
+
+
+            const enButtons =
+                document.querySelectorAll(
+                    ".lang-en-btn"
+                );
+
+
+
+            /* ---------------------------------------------
+               ENGLISH ACTIVE
+            --------------------------------------------- */
+
+            if (language === "en") {
+
+
+                enButtons.forEach(
+                    function (button) {
+
+                        button.classList.remove(
+                            "bg-white",
+                            "text-black"
+                        );
+
+                        button.classList.add(
+                            "bg-black",
+                            "text-white"
+                        );
+
+                    }
+                );
+
+
+                faButtons.forEach(
+                    function (button) {
+
+                        button.classList.remove(
+                            "bg-black",
+                            "text-white"
+                        );
+
+                        button.classList.add(
+                            "bg-white",
+                            "text-black"
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            /* ---------------------------------------------
+               PERSIAN ACTIVE
+            --------------------------------------------- */
+
+            else {
+
+
+                faButtons.forEach(
+                    function (button) {
+
+                        button.classList.remove(
+                            "bg-white",
+                            "text-black"
+                        );
+
+                        button.classList.add(
+                            "bg-black",
+                            "text-white"
+                        );
+
+                    }
+                );
+
+
+                enButtons.forEach(
+                    function (button) {
+
+                        button.classList.remove(
+                            "bg-black",
+                            "text-white"
+                        );
+
+                        button.classList.add(
+                            "bg-white",
+                            "text-black"
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            /* ---------------------------------------------
+               SAVE LANGUAGE
+            --------------------------------------------- */
+
+            localStorage.setItem(
+                "tachar-language",
+                language
+            );
+
+
+
+            /* ---------------------------------------------
+               PAGE TITLE + DESCRIPTION
+            --------------------------------------------- */
+
+            const pageTitle =
+                document.getElementById(
+                    "pageTitle"
+                );
+
+
+            const pageDescription =
+                document.getElementById(
+                    "pageDescription"
+                );
+
+
+            if (language === "en") {
+
+
+                pageTitle.textContent =
+                    "Tachar Ceramic | Catalog";
+
+
+                pageDescription.setAttribute(
+                    "content",
+                    "Tachar Ceramic catalog. Explore ceramic products by size and dimensions."
+                );
+
+            }
+
+            else {
+
+
+                pageTitle.textContent =
+                    "تاچار سرامیک | کاتالوگ";
+
+
+                pageDescription.setAttribute(
+                    "content",
+                    "کاتالوگ سرامیک تاچار؛ مشاهده محصولات بر اساس ابعاد و سایز سرامیک."
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           LOAD SAVED LANGUAGE
+        ====================================================== */
+
+        const savedLanguage =
+            localStorage.getItem(
+                "tachar-language"
+            ) || "fa";
+
+
+        setLanguage(
+            savedLanguage
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تچر سرامیک | کاتالوگ محصولات</title>
+
+    <meta name="description"
+        content="تچر سرامیک، مجموعه بازرگانی مرادی در زمینه تأمین و عرضه کاشی و سرامیک ساختمانی. مشاهده محصولات، ابعاد، لعاب، خاک و درجه.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/style.css">
+
+    <!-- دیتابیس محصولات -->
+    <script src="./products60120.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazir: ['Vazirmatn', 'Arial', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Vazirmatn, Arial, sans-serif;
+        }
+
+        body.en {
+            font-family: Montserrat, Arial, sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, .72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, .7);
+        }
+
+        .fixed-layout {
+            direction: ltr !important;
+        }
+
+        .language-text {
+            direction: rtl;
+        }
+
+        body.en .language-text {
+            direction: ltr;
+        }
+
+        .catalog-card {
+            transition: transform .35s ease, box-shadow .35s ease, background .35s ease;
+            cursor: pointer;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
+            background: rgba(255, 255, 255, .9);
+        }
+
+        .catalog-image {
+            transition: transform .6s ease;
+        }
+
+        .catalog-card:hover .catalog-image {
+            transform: scale(1.05);
+        }
+
+        .spec-row {
+            direction: rtl;
+        }
+
+        body.en .spec-row {
+            direction: ltr;
+        }
+
+        .lang-fa-btn,
+        .lang-en-btn {
+            min-width: 42px;
+            white-space: nowrap;
+        }
+
+        .page-btn.active {
+            background: #000;
+            color: #fff;
+        }
+
+        .fade-in {
+            animation: fadeIn .35s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="fa min-h-screen text-gray-900 bg-gray-50">
+
+    <!-- BACKGROUND -->
+    <div class="fixed inset-0 -z-20 bg-cover bg-center bg-fixed"
+        style="background-image:url('./img/ChatGPT Image Sep 2, 2026, 11_17_46 AM.png');"></div>
+
+    <div class="fixed inset-0 -z-10 bg-white/40"></div>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+        <nav class="glass max-w-7xl mx-auto rounded-2xl px-6 py-4 shadow-lg">
+
+            <div class="flex items-center justify-between">
+
+                <a href="./mew.html" class="text-2xl font-black tracking-wide">
+                    TACHAR
+                </a>
+
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+                    <a href="./index.html">
+                        <span data-fa="خانه" data-en="Home">خانه</span>
+                    </a>
+
+                    <a href="./cutalog.html">
+                        <span data-fa="محصولات" data-en="Products">محصولات</span>
+                    </a>
+
+                    <a href="#about">
+                        <span data-fa="درباره ما" data-en="About Us">درباره ما</span>
+                    </a>
+
+                    <a href="./cont.html">
+                        <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+                    </a>
+
+                </div>
+
+                <a href="#contact"
+                    class="hidden md:block bg-black text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition">
+                    <span data-fa="درخواست مشاوره" data-en="Request a Consultation">
+                        درخواست مشاوره
+                    </span>
+                </a>
+
+                <!-- DESKTOP LANGUAGE -->
+                <div
+                    class="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1">
+
+                    <button id="faBtn" onclick="setLanguage('fa')"
+                        class="lang-fa-btn px-3 py-1.5 rounded-lg bg-black text-white text-xs font-bold transition">
+                        FA
+                    </button>
+
+                    <button id="enBtn" onclick="setLanguage('en')"
+                        class="lang-en-btn px-3 py-1.5 rounded-lg bg-white text-black text-xs font-bold transition">
+                        EN
+                    </button>
+
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-2xl">
+                    ☰
+                </button>
+
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div id="mobileMenu" class="hidden md:hidden pt-5">
+
+                <div class="flex flex-col gap-4 text-sm">
+
+                    <a href="./mew.html">
+                        <span data-fa="خانه" data-en="Home">خانه</span>
+                    </a>
+
+                    <a href="./cutalog.html">
+                        <span data-fa="محصولات" data-en="Products">محصولات</span>
+                    </a>
+
+                    <a href="#about">
+                        <span data-fa="درباره ما" data-en="About Us">درباره ما</span>
+                    </a>
+
+                    <a href="./cont.html">
+                        <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+                    </a>
+
+                    <!-- MOBILE LANGUAGE -->
+                    <div
+                        class="flex items-center gap-1 bg-white/70 backdrop-blur-sm border border-black/10 rounded-xl p-1 w-fit">
+
+                        <button onclick="setLanguage('fa')"
+                            class="lang-fa-btn px-3 py-1.5 rounded-lg bg-black text-white text-xs font-bold transition">
+                            FA
+                        </button>
+
+                        <button onclick="setLanguage('en')"
+                            class="lang-en-btn px-3 py-1.5 rounded-lg bg-white text-black text-xs font-bold transition">
+                            EN
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="pt-32 fixed-layout">
+
+        <!-- HERO -->
+        <section class="px-6 py-16 text-center">
+
+            <div class="max-w-4xl mx-auto">
+
+                <p class="text-sm text-gray-500 tracking-[.25em] mb-5">
+                    CATALOG
+                </p>
+
+                <h1 class="text-5xl md:text-7xl font-black mb-6 language-text"
+                    data-fa="کاتالوگ محصولات"
+                    data-en="Product Catalog">
+                    کاتالوگ محصولات
+                </h1>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+        <section class="px-6 pb-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="flex items-center justify-between mb-6 px-1">
+
+                    <span id="countLabel"
+                        class="text-sm text-gray-500 language-text">
+                    </span>
+
+                    <span id="pageLabel"
+                        class="text-sm text-gray-500 language-text">
+                    </span>
+
+                </div>
+
+
+                <div id="productGrid"
+                    class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 fade-in">
+                </div>
+
+
+                <div id="pagination"
+                    class="flex items-center justify-center gap-2 mt-12 flex-wrap">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+       <footer class="px-5 pb-6 pt-16">
+        <div class="max-w-7xl mx-auto bg-black text-white rounded-[2rem] overflow-hidden">
+            <div class="px-7 py-10 md:px-12 md:py-12">
+
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+
+                    <!-- BRAND -->
+                    <div>
+                        <h2 class="text-2xl font-black tracking-[0.2em]">TACHAR</h2>
+                        <h2 class="text-2xl font-black tracking-[0.2em]">تچر</h2>
+                        <p class="text-gray-400 text-sm mt-3"
+                           data-fa="انتخابی برای فضاهای خاص" data-en="A Choice For Exceptional Spaces">
+                            انتخابی برای فضاهای خاص
+                        </p>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>
+                                <span>شیراز, بلوار صنایع، بین کوچه 6 و 8</span><br/>
+                                <span>ازادراه شیراز-زرقان , شهریار بلوار جهانگیرخان قشقایی</span>
+                            </li>
+                            <li class="flex-col items-center">
+                                <span>09175506688</span><br>
+                                <span>09177388125</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span>tacharcermics@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- LINKS -->
+                    <div class="flex flex-wrap gap-8 text-sm">
+                        <a href="./index.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="خانه" data-en="Home">خانه</span>
+                        </a>
+                        <a href="./cutalog.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="محصولات" data-en="Products">محصولات</span>
+                        </a>
+                        <a href="#about" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="درباره ما" data-en="About Us">درباره ما</span>
+                        </a>
+                        <a href="./cont.html" class="text-gray-300 hover:text-white transition">
+                            <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+                        </a>
+                    </div>
+
+                    <!-- SOCIAL -->
+                    <div class="flex items-center gap-3">
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/tacharceram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                           class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+                            </svg>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/989175506691" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                           class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                                <path d="M8.5 8.5c.2-.4.5-.4.8-.4h.4c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3 0 .6-.4.8-.4.3-1 .4-1.5.2-2.2-.6-4.5-2.9-5.1-5.1-.2-.5-.1-1.1.2-1.5Z"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="border-t border-white/10 mt-10 pt-5">
+                    <div class="flex flex-col md:flex-row justify-between gap-3 text-xs text-gray-500">
+                        <p data-fa="© ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است."
+                           data-en="© 2026 Tachar Ceramic. All rights reserved.">
+                            © ۲۰۲۶ تچر سرامیک. تمامی حقوق محفوظ است.
+                        </p>
+                        <p data-fa="سرامیک • کاشی • طراحی" data-en="Ceramic • Tile • Design">
+                            سرامیک • کاشی • طراحی
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        /* ================= MOBILE MENU ================= */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+
+        /* ================= SETTINGS ================= */
+
+        /*
+         * این صفحه فقط محصولات 60 × 120 را نشان می‌دهد.
+         *
+         * products.js باید کنار همین فایل باشد.
+         *
+         * هر محصول با id خودش به:
+         *
+         * product.html?id=1
+         *
+         * یا:
+         *
+         * product.html?id=25
+         *
+         * منتقل می‌شود.
+         */
+
+        const PAGE_SIZE = "60×120";
+
+        const PER_PAGE = 15;
+
+
+        /* ================= GET 60×120 PRODUCTS ================= */
+
+        /*
+         * در products.js سایز به شکل:
+         *
+         * 60 × 120
+         *
+         * ذخیره شده.
+         *
+         * اینجا فاصله‌ها حذف می‌شوند تا مشکلی پیش نیاید.
+         */
+
+        const PRODUCTS_60_120 = PRODUCTS.filter(product => {
+
+            const size = product.fa?.size || "";
+
+            return size
+                .replace(/\s/g, "")
+                .toLowerCase() === PAGE_SIZE
+                    .replace(/\s/g, "")
+                    .toLowerCase();
+
+        });
+
+
+        const TOTAL_PRODUCTS = PRODUCTS_60_120.length;
+
+        const TOTAL_PAGES = Math.ceil(
+            TOTAL_PRODUCTS / PER_PAGE
+        );
+
+
+        let currentLang =
+            localStorage.getItem("tachar-language") || "fa";
+
+        let currentPage = 1;
+
+
+        /* ================= LABELS ================= */
+
+        const LABELS = {
+
+            size: {
+                fa: "سایز",
+                en: "Size"
+            },
+
+            glaze: {
+                fa: "سطح",
+                en: "Surface"
+            },
+
+            body: {
+                fa: "خاک",
+                en: "Body"
+            },
+
+            grade: {
+                fa: "درجه",
+                en: "Grade"
+            },
+
+            count: {
+                fa: n => `${n} محصول`,
+                en: n => `${n} Products`
+            },
+
+            page: {
+                fa: (p, t) => `صفحه ${p} از ${t}`,
+                en: (p, t) => `Page ${p} of ${t}`
+            },
+
+            prev: {
+                fa: "قبلی",
+                en: "Prev"
+            },
+
+            next: {
+                fa: "بعدی",
+                en: "Next"
+            }
+
+        };
+
+
+        /* ================= PRODUCT CARD ================= */
+
+        function productCard(product) {
+
+            const lang = currentLang;
+
+            const data =
+                product[lang] || product.fa;
+
+            /*
+             * مهم:
+             *
+             * با کلیک روی هر کارت، id همان محصول
+             * داخل URL قرار می‌گیرد.
+             *
+             * مثال:
+             *
+             * product.html?id=7
+             *
+             */
+
+            return `
+
+                <a href="./product.html?id=${product.id}"
+                    class="block">
+
+                    <div class="catalog-card glass rounded-3xl overflow-hidden fade-in">
+
+                        <div class="overflow-hidden bg-white">
+
+                            <img
+                                src="${product.image}"
+                                alt="${data.name || product.code}"
+                                class="catalog-image w-full aspect-square object-cover"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="p-4">
+
+                            <div class="flex items-center justify-between mb-3">
+
+                                <span class="text-xs font-bold text-gray-400 tracking-wide">
+                                    ${product.code}
+                                </span>
+
+                                <span class="text-sm font-black">
+                                    ${data.size || product.fa.size}
+                                </span>
+
+                            </div>
+
+
+                            <ul class="text-xs text-gray-600 space-y-1.5">
+
+                                <li class="spec-row flex justify-between">
+
+                                    <span class="text-gray-400">
+                                        ${LABELS.size[lang]}
+                                    </span>
+
+                                    <span class="font-medium text-gray-800">
+                                        ${data.size || "-"}
+                                    </span>
+
+                                </li>
+
+
+                                <li class="spec-row flex justify-between">
+
+                                    <span class="text-gray-400">
+                                        ${LABELS.glaze[lang]}
+                                    </span>
+
+                                    <span class="font-medium text-gray-800">
+                                        ${data.surface || "-"}
+                                    </span>
+
+                                </li>
+
+
+                                <li class="spec-row flex justify-between">
+
+                                    <span class="text-gray-400">
+                                        ${LABELS.body[lang]}
+                                    </span>
+
+                                    <span class="font-medium text-gray-800">
+                                        ${data.body || "-"}
+                                    </span>
+
+                                </li>
+
+
+                                <li class="spec-row flex justify-between">
+
+                                    <span class="text-gray-400">
+                                        ${LABELS.grade[lang]}
+                                    </span>
+
+                                    <span class="font-medium text-gray-800">
+                                        ${data.grade || "-"}
+                                    </span>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            `;
+
+        }
+
+
+        /* ================= RENDER PRODUCTS ================= */
+
+        function renderProducts() {
+
+            const start =
+                (currentPage - 1) * PER_PAGE;
+
+            const items =
+                PRODUCTS_60_120.slice(
+                    start,
+                    start + PER_PAGE
+                );
+
+
+            document.getElementById("productGrid").innerHTML =
+                items.map(productCard).join("");
+
+
+            document.getElementById("countLabel").textContent =
+                LABELS.count[currentLang](TOTAL_PRODUCTS);
+
+
+            document.getElementById("pageLabel").textContent =
+                LABELS.page[currentLang](
+                    currentPage,
+                    TOTAL_PAGES
+                );
+
+
+            renderPagination();
+
+        }
+
+
+        /* ================= PAGINATION ================= */
+
+        function renderPagination() {
+
+            const pag =
+                document.getElementById("pagination");
+
+            const prev =
+                LABELS.prev[currentLang];
+
+            const next =
+                LABELS.next[currentLang];
+
+
+            let html = `
+
+                <button
+                    onclick="goToPage(${currentPage - 1})"
+                    class="page-btn px-4 py-2 rounded-xl glass text-sm font-medium
+                    ${currentPage === 1
+                        ? "opacity-40 pointer-events-none"
+                        : "hover:bg-black hover:text-white transition"}">
+
+                    ${prev}
+
+                </button>
+
+            `;
+
+
+            for (
+                let i = 1;
+                i <= TOTAL_PAGES;
+                i++
+            ) {
+
+                html += `
+
+                    <button
+                        onclick="goToPage(${i})"
+                        class="page-btn w-10 h-10 rounded-xl glass text-sm font-bold transition
+                        ${i === currentPage
+                            ? "active"
+                            : "hover:bg-black hover:text-white"}">
+
+                        ${i}
+
+                    </button>
+
+                `;
+
+            }
+
+
+            html += `
+
+                <button
+                    onclick="goToPage(${currentPage + 1})"
+                    class="page-btn px-4 py-2 rounded-xl glass text-sm font-medium
+                    ${currentPage === TOTAL_PAGES
+                        ? "opacity-40 pointer-events-none"
+                        : "hover:bg-black hover:text-white transition"}">
+
+                    ${next}
+
+                </button>
+
+            `;
+
+
+            pag.innerHTML = html;
+
+        }
+
+
+        /* ================= GO TO PAGE ================= */
+
+        function goToPage(page) {
+
+            if (
+                page < 1 ||
+                page > TOTAL_PAGES
+            ) return;
+
+            currentPage = page;
+
+            renderProducts();
+
+            window.scrollTo({
+                top: document.getElementById("productGrid").offsetTop - 140,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* ================= LANGUAGE ================= */
+
+        function setLanguage(language) {
+
+            currentLang = language;
+
+
+            document.querySelectorAll(
+                "[data-fa][data-en]"
+            ).forEach(el => {
+
+                el.textContent =
+                    language === "en"
+                        ? el.dataset.en
+                        : el.dataset.fa;
+
+            });
+
+
+            document.body.classList.remove(
+                "fa",
+                "en"
+            );
+
+            document.body.classList.add(language);
+
+            document.documentElement.lang =
+                language;
+
+
+            /* DESKTOP LANGUAGE BUTTON */
+
+            document.querySelectorAll(
+                ".lang-fa-btn"
+            ).forEach(btn => {
+
+                btn.classList.toggle(
+                    "bg-black",
+                    language === "fa"
+                );
+
+                btn.classList.toggle(
+                    "text-white",
+                    language === "fa"
+                );
+
+                btn.classList.toggle(
+                    "bg-white",
+                    language === "en"
+                );
+
+                btn.classList.toggle(
+                    "text-black",
+                    language === "en"
+                );
+
+            });
+
+
+            /* ENGLISH BUTTON */
+
+            document.querySelectorAll(
+                ".lang-en-btn"
+            ).forEach(btn => {
+
+                btn.classList.toggle(
+                    "bg-black",
+                    language === "en"
+                );
+
+                btn.classList.toggle(
+                    "text-white",
+                    language === "en"
+                );
+
+                btn.classList.toggle(
+                    "bg-white",
+                    language === "fa"
+                );
+
+                btn.classList.toggle(
+                    "text-black",
+                    language === "fa"
+                );
+
+            });
+
+
+            document.title =
+                language === "en"
+                    ? "Tachar Ceramic | Product Catalog"
+                    : "تچر سرامیک | کاتالوگ محصولات";
+
+
+            localStorage.setItem(
+                "tachar-language",
+                language
+            );
+
+
+            renderProducts();
+
+        }
+
+
+        /* ================= INIT ================= */
+
+        setLanguage(currentLang);
+
+    </script>
+
+</body>
+
+</html>

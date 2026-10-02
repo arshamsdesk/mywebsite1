@@ -4,3 +4,10 @@
     radial-gradient(circle at bottom right, rgba(99,102,241,0.12), transparent),
     linear-gradient(180deg, #0a0f1a, #0f172a);
 }
+body.fa {
+    font-family: "Vazirmatn", sans-serif;
+}
+
+body.en {
+    font-family: "Montserrat", sans-serif;
+}
