@@ -1,24 +1,32 @@
 // ============================================================
-// TACHAR CERAMIC - PRODUCTS DATABASE
-// products.js
+// TACHAR CERAMIC - PRODUCTS DATABASE (100 × 100)
+// products100100.js
+// ============================================================
+//
+// کپی دقیق products60120.js با سایز 100 × 100.
+// تغییرات فنی لازم برای کار کردن کنار فایل 60×120:
+//   - نام آرایه: PRODUCTS_100100 (به‌جای PRODUCTS)
+//   - id ها از 1001 شروع می‌شوند (به‌جای 1)
+//   - کد محصولات: TC-1001 به بعد
+//   - توابع کمکی حذف شد (در products60120.js هست)
 // ============================================================
 
-const PRODUCTS = [
+const PRODUCTS_100100 = [
 
     // ========================================================
     // 01
     // ========================================================
     {
-        id: 1,
+        id: 1001,
 
-        code: "TC-001",
+        code: "TC-1001",
 
         image: "./60120img/analia-white-nano-polish-60x120-f1-1.jpg",
 
         fa: {
             name: "analia white",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -44,7 +52,7 @@ const PRODUCTS = [
         en: {
             name: "analia white",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -73,16 +81,16 @@ const PRODUCTS = [
     // 02
     // ========================================================
     {
-        id: 2,
+        id: 1002,
 
-        code: "TC-002",
+        code: "TC-1002",
 
         image: "./60120img/astora-black-4-match-nano-polish-60x120-cover-1.jpg",
 
         fa: {
             name: "astora black 4match",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -108,7 +116,7 @@ const PRODUCTS = [
         en: {
             name: "astora 4match",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -137,16 +145,16 @@ const PRODUCTS = [
     // 03
     // ========================================================
     {
-        id: 3,
+        id: 1003,
 
-        code: "TC-003",
+        code: "TC-1003",
 
         image: "./60120img/brandon-brown-nano-polish-60x120-cover-1.jpg",
 
         fa: {
             name: "brandon brown",
             collection: "brandon brown",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -172,7 +180,7 @@ const PRODUCTS = [
         en: {
             name: "brandon brown",
             collection: "Premium Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -201,16 +209,16 @@ const PRODUCTS = [
     // 04
     // ========================================================
     {
-        id: 4,
+        id: 1004,
 
-        code: "TC-004",
+        code: "TC-1004",
 
         image: "./60120img/antonella-dark-cream-silky-matt-60x120-cover-1.jpg",
 
         fa: {
             name: " antonella dark ",
             collection: "کالکشن لاکچری",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "تمام‌بدنه",
             grade: "درجه ۱",
@@ -236,7 +244,7 @@ const PRODUCTS = [
         en: {
             name: "antonella dark",
             collection: "Luxury Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "Full Body",
             grade: "Grade 1",
@@ -265,16 +273,16 @@ const PRODUCTS = [
     // 05
     // ========================================================
     {
-        id: 5,
+        id: 1005,
 
-        code: "TC-005",
+        code: "TC-1005",
 
         image: "./60120img/brandon-cream-nano-polish-60x120-f2-1.jpg",
 
         fa: {
             name: "brandon cream",
             collection: "کالکشن استون",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -300,7 +308,7 @@ const PRODUCTS = [
         en: {
             name: "brandon cream",
             collection: "Stone Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -329,14 +337,14 @@ const PRODUCTS = [
     // 06
     // ========================================================
     {
-        id: 6,
-        code: "TC-006",
+        id: 1006,
+        code: "TC-1006",
         image: "./img/IMG-20250904-WA0007.jpg",
 
         fa: {
             name: "سرامیک کرم مرمر",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -351,7 +359,7 @@ const PRODUCTS = [
         en: {
             name: "Cream Marble Ceramic",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -369,14 +377,14 @@ const PRODUCTS = [
     // 07
     // ========================================================
     {
-        id: 7,
-        code: "TC-007",
+        id: 1007,
+        code: "TC-1007",
         image: "./img/IMG-20250904-WA0008.jpg",
 
         fa: {
             name: "سرامیک مرمر روشن",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -390,7 +398,7 @@ const PRODUCTS = [
         en: {
             name: "Light Marble Ceramic",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -407,14 +415,14 @@ const PRODUCTS = [
     // 08
     // ========================================================
     {
-        id: 8,
-        code: "TC-008",
+        id: 1008,
+        code: "TC-1008",
         image: "./img/Janik-White-Black-60-120-polish.jpg",
 
         fa: {
             name: "سرامیک سنگ سفید",
             collection: "کالکشن استون",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "تمام‌بدنه",
             grade: "درجه ۱",
@@ -428,7 +436,7 @@ const PRODUCTS = [
         en: {
             name: "White Stone Ceramic",
             collection: "Stone Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "Full Body",
             grade: "Grade 1",
@@ -445,14 +453,14 @@ const PRODUCTS = [
     // 09
     // ========================================================
     {
-        id: 9,
-        code: "TC-009",
+        id: 1009,
+        code: "TC-1009",
         image: "./img/CASPIAN-LIGHT-GRAY-120-POL.jpg",
 
         fa: {
             name: "سرامیک طوسی روشن",
             collection: "کالکشن پریمیوم",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -466,7 +474,7 @@ const PRODUCTS = [
         en: {
             name: "Light Grey Ceramic",
             collection: "Premium Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -483,14 +491,14 @@ const PRODUCTS = [
     // 10
     // ========================================================
     {
-        id: 10,
-        code: "TC-010",
+        id: 1010,
+        code: "TC-1010",
         image: "./img/Magma-Silver-CaspianLightGray-zoom.jpg",
 
         fa: {
             name: "سرامیک مرمر طلایی",
             collection: "کالکشن لاکچری",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -504,7 +512,7 @@ const PRODUCTS = [
         en: {
             name: "Golden Marble Ceramic",
             collection: "Luxury Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -522,13 +530,13 @@ const PRODUCTS = [
     // ========================================================
 
     {
-        id: 11,
-        code: "TC-011",
+        id: 1011,
+        code: "TC-1011",
         image: "./img/Astora-4Match-super-Black-WALL-1-2-1-scaled.jpg",
         fa: {
             name: "سرامیک مرمر بژ",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -541,7 +549,7 @@ const PRODUCTS = [
         en: {
             name: "Beige Marble Ceramic",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -554,13 +562,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 12,
-        code: "TC-012",
+        id: 1012,
+        code: "TC-1012",
         image: "./img/Lilium-Cream-Crystal-768x432.jpg",
         fa: {
             name: "سرامیک طوسی تیره",
             collection: "کالکشن استون",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "تمام‌بدنه",
             grade: "درجه ۱",
@@ -573,7 +581,7 @@ const PRODUCTS = [
         en: {
             name: "Dark Grey Ceramic",
             collection: "Stone Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "Full Body",
             grade: "Grade 1",
@@ -586,13 +594,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 13,
-        code: "TC-013",
+        id: 1013,
+        code: "TC-1013",
         image: "./img/3D-AntinoBlack-CarlottaGold60120-7mm-wc-2048x2048.jpg",
         fa: {
             name: "سرامیک سفید مرمر",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -605,7 +613,7 @@ const PRODUCTS = [
         en: {
             name: "White Marble Ceramic",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -618,13 +626,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 14,
-        code: "TC-014",
+        id: 1014,
+        code: "TC-1014",
         image: "./img/SUNRISE-WHITE-120x120-1-2048x2048.jpg",
         fa: {
             name: "سرامیک کرم روشن",
             collection: "کالکشن پریمیوم",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -637,7 +645,7 @@ const PRODUCTS = [
         en: {
             name: "Light Cream Ceramic",
             collection: "Premium Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -650,13 +658,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 15,
-        code: "TC-015",
+        id: 1015,
+        code: "TC-1015",
         image: "./img/electra-light-cream.jpg",
         fa: {
             name: "سرامیک مشکی لوکس",
             collection: "کالکشن لاکچری",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "تمام‌بدنه",
             grade: "درجه ۱",
@@ -669,7 +677,7 @@ const PRODUCTS = [
         en: {
             name: "Luxury Black Ceramic",
             collection: "Luxury Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "Full Body",
             grade: "Grade 1",
@@ -682,13 +690,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 16,
-        code: "TC-016",
+        id: 1016,
+        code: "TC-1016",
         image: "./img/Tomas-4match-60120-1-1-768x768.jpg",
         fa: {
             name: "سرامیک سنگی سفید",
             collection: "کالکشن استون",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "تمام‌بدنه",
             grade: "درجه ۱",
@@ -701,7 +709,7 @@ const PRODUCTS = [
         en: {
             name: "White Stone Ceramic",
             collection: "Stone Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "Full Body",
             grade: "Grade 1",
@@ -714,13 +722,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 17,
-        code: "TC-017",
+        id: 1017,
+        code: "TC-1017",
         image: "./img/IMG-20250904-WA0003.jpg",
         fa: {
             name: "سرامیک طوسی مرمر",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -733,7 +741,7 @@ const PRODUCTS = [
         en: {
             name: "Grey Marble Ceramic",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -746,13 +754,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 18,
-        code: "TC-018",
+        id: 1018,
+        code: "TC-1018",
         image: "./img/IMG-20250904-WA0007.jpg",
         fa: {
             name: "سرامیک بژ سنگی",
             collection: "کالکشن استون",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -765,7 +773,7 @@ const PRODUCTS = [
         en: {
             name: "Beige Stone Ceramic",
             collection: "Stone Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -778,13 +786,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 19,
-        code: "TC-019",
+        id: 1019,
+        code: "TC-1019",
         image: "./img/IMG-20250904-WA0008.jpg",
         fa: {
             name: "سرامیک سفید براق",
             collection: "کالکشن پریمیوم",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -797,7 +805,7 @@ const PRODUCTS = [
         en: {
             name: "Glossy White Ceramic",
             collection: "Premium Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -810,13 +818,13 @@ const PRODUCTS = [
     },
 
     {
-        id: 20,
-        code: "TC-020",
+        id: 1020,
+        code: "TC-1020",
         image: "./img/Janik-White-Black-60-120-polish.jpg",
         fa: {
             name: "سرامیک مرمر کرم",
             collection: "کالکشن مرمر",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "پرسلان",
             body: "خاک سفید",
             grade: "درجه ۱",
@@ -829,7 +837,7 @@ const PRODUCTS = [
         en: {
             name: "Cream Marble Ceramic",
             collection: "Marble Collection",
-            size: "60 × 120",
+            size: "100 × 100",
             type: "Porcelain",
             body: "White Body",
             grade: "Grade 1",
@@ -847,7 +855,7 @@ const PRODUCTS = [
 
     ...Array.from({ length: 30 }, (_, index) => {
 
-        const id = index + 21;
+        const id = index + 1021;
 
         const namesFa = [
             "سرامیک مرمر سفید",
@@ -929,7 +937,7 @@ const PRODUCTS = [
 
             id: id,
 
-            code: `TC-${String(id).padStart(3, "0")}`,
+            code: `TC-${id}`,
 
             image: images[imageIndex],
 
@@ -937,7 +945,7 @@ const PRODUCTS = [
                 name: namesFa[nameIndex],
                 collection: collectionsFa[collectionIndex],
 
-                size: "60 × 120",
+                size: "100 × 100",
 
                 type: "پرسلان",
 
@@ -972,7 +980,7 @@ const PRODUCTS = [
                 name: namesEn[nameIndex],
                 collection: collectionsEn[collectionIndex],
 
-                size: "60 × 120",
+                size: "100 × 100",
 
                 type: "Porcelain",
 
@@ -1006,74 +1014,3 @@ const PRODUCTS = [
     })
 
 ];
-
-
-// ============================================================
-// HELPER FUNCTIONS
-// ============================================================
-
-/**
- * دریافت محصول بر اساس ID
- *
- * مثال:
- * getProductById(15)
- */
-function getProductById(id) {
-
-    const productId = Number(id);
-
-    return PRODUCTS.find(product => product.id === productId) || null;
-}
-
-
-/**
- * دریافت محصول بر اساس کد
- *
- * مثال:
- * getProductByCode("TC-015")
- */
-function getProductByCode(code) {
-
-    return PRODUCTS.find(product => product.code === code) || null;
-}
-
-
-/**
- * دریافت اطلاعات محصول بر اساس زبان
- *
- * مثال:
- * getProductData(15, "fa")
- */
-function getProductData(id, language = "fa") {
-
-    const product = getProductById(id);
-
-    if (!product) return null;
-
-    return product[language] || product.fa;
-}
-
-
-/**
- * دریافت ID محصول از URL
- *
- * مثال:
- * product.html?id=15
- */
-function getProductIdFromURL() {
-
-    const params = new URLSearchParams(window.location.search);
-
-    return Number(params.get("id")) || 1;
-}
-
-
-/**
- * دریافت محصول فعلی صفحه
- */
-function getCurrentProduct() {
-
-    const id = getProductIdFromURL();
-
-    return getProductById(id) || PRODUCTS[0];
-}

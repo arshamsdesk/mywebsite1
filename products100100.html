@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>تچر سرامیک | محصول</title>
+  <title>تچر سرامیک | محصول 100×100</title>
   <meta id="metaDescription" name="description" content="مشخصات محصول در تچر سرامیک.">
-  <link id="canonicalLink" rel="canonical" href="https://tacharceramic.com/product.html">
+  <link id="canonicalLink" rel="canonical" href="https://tacharceramic.com/products100100.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,9 +30,9 @@
     };
   </script>
 
-  <!-- Database (must expose getProductIdFromURL / getProductById) -->
-  <script src="./products60120.js"></script>
-  <script src="./products100100.js"></script>
+  <!-- Database: 100×100 only (defines PRODUCTS_100100) -->
+  <script src="./100-100.js"></script>
+
   <!-- Dynamic SEO schema (filled by JS) -->
   <script id="productSchema" type="application/ld+json">{}</script>
 
@@ -108,7 +108,7 @@
         <div class="flex flex-col gap-4 text-sm">
           <a href="./mew.html"><span data-fa="خانه" data-en="Home">خانه</span></a>
           <a href="./cutalog.html"><span data-fa="محصولات" data-en="Products">محصولات</span></a>
-          <a href="./mew.html#about"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
+          <a href="./mew.html"><span data-fa="درباره ما" data-en="About Us">درباره ما</span></a>
           <a href="./cont.html"><span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span></a>
         </div>
 
@@ -339,9 +339,13 @@
 
   <!-- ===== SCRIPT ===== -->
   <script>
-    /* ---------- Product lookup ---------- */
-    const currentProduct = getProductById(getProductIdFromURL());
-    
+    /* ---------- Product lookup (100×100 only) ---------- */
+    const getProductIdFromURL = () =>
+      Number(new URLSearchParams(window.location.search).get("id")) || 1001;
+
+    const currentProduct = PRODUCTS_100100.find(
+      (product) => product.id === getProductIdFromURL()
+    );
 
     if (!currentProduct) {
       document.body.innerHTML = `
@@ -349,7 +353,7 @@
           <div class="glass rounded-[2rem] p-10 text-center">
             <h1 class="text-3xl font-black mb-4">محصول پیدا نشد</h1>
             <p class="text-gray-600 mb-6">محصول مورد نظر پیدا نشد.</p>
-            <a href="./cutalog.html" class="bg-black text-white px-6 py-3 rounded-xl">بازگشت به کاتالوگ</a>
+            <a href="./100-100.html" class="bg-black text-white px-6 py-3 rounded-xl">بازگشت به کاتالوگ</a>
           </div>
         </div>`;
       throw new Error("Product not found");
@@ -383,7 +387,7 @@
       const factory      = data.factory || "";
       const surface      = data.surface || "";
       const description  = data.description || "";
-      const applications = data.applications || "";
+      const applications = toArray(data.applications).join(isFa ? "، " : ", ");
       const features     = toArray(data.features);
 
       /* Image */
@@ -437,7 +441,7 @@
         : `${name} ${size} ${type} Grade ${grade} | Tachar Ceramic`;
 
       $("metaDescription").content = description || `${name} ${size} | تچر سرامیک`;
-      $("canonicalLink").href = `https://tacharceramic.com/product.html?id=${currentProduct.id}`;
+      $("canonicalLink").href = `https://tacharceramic.com/products100100.html?id=${currentProduct.id}`;
 
       /* JSON-LD */
       const schema = {
@@ -497,7 +501,6 @@
     /* ---------- Init ---------- */
     setLanguage(currentLang);   // also calls renderProduct()
   </script>
-  
 
 </body>
 </html>
