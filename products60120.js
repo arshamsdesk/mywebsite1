@@ -11,13 +11,14 @@ const PRODUCTS = [
     {
         id: 1,
 
-        code: "TC-001",
+        code: "analia white",
+
+        slug: "analia-white-60x120-tc-001",
 
         image: "./60120img/analia-white-nano-polish-60x120-f1-1.jpg",
 
         fa: {
             name: "analia white",
-            collection: "کالکشن مرمر",
             size: "60 × 120",
             type: "پرسلان",
             body: "خاک سفید",
@@ -43,7 +44,6 @@ const PRODUCTS = [
 
         en: {
             name: "analia white",
-            collection: "Marble Collection",
             size: "60 × 120",
             type: "Porcelain",
             body: "White Body",
@@ -75,13 +75,14 @@ const PRODUCTS = [
     {
         id: 2,
 
-        code: "TC-002",
+        code: "astora black",
+
+        slug: "astora-4match-60x120-tc-002",
 
         image: "./60120img/astora-black-4-match-nano-polish-60x120-cover-1.jpg",
 
         fa: {
             name: "astora black 4match",
-            collection: "کالکشن مرمر",
             size: "60 × 120",
             type: "پرسلان",
             body: "خاک سفید",
@@ -107,7 +108,6 @@ const PRODUCTS = [
 
         en: {
             name: "astora 4match",
-            collection: "Marble Collection",
             size: "60 × 120",
             type: "Porcelain",
             body: "White Body",
@@ -139,13 +139,14 @@ const PRODUCTS = [
     {
         id: 3,
 
-        code: "TC-003",
+        code: "brandon brown",
+
+        slug: "brandon-brown-60x120-tc-003",
 
         image: "./60120img/brandon-brown-nano-polish-60x120-cover-1.jpg",
 
         fa: {
             name: "brandon brown",
-            collection: "brandon brown",
             size: "60 × 120",
             type: "پرسلان",
             body: "خاک سفید",
@@ -171,7 +172,6 @@ const PRODUCTS = [
 
         en: {
             name: "brandon brown",
-            collection: "Premium Collection",
             size: "60 × 120",
             type: "Porcelain",
             body: "White Body",
@@ -203,13 +203,14 @@ const PRODUCTS = [
     {
         id: 4,
 
-        code: "TC-004",
+        code: "antonella dark",
+
+        slug: "antonella-dark-60x120-tc-004",
 
         image: "./60120img/antonella-dark-cream-silky-matt-60x120-cover-1.jpg",
 
         fa: {
             name: " antonella dark ",
-            collection: "کالکشن لاکچری",
             size: "60 × 120",
             type: "پرسلان",
             body: "تمام‌بدنه",
@@ -235,7 +236,6 @@ const PRODUCTS = [
 
         en: {
             name: "antonella dark",
-            collection: "Luxury Collection",
             size: "60 × 120",
             type: "Porcelain",
             body: "Full Body",
@@ -267,13 +267,14 @@ const PRODUCTS = [
     {
         id: 5,
 
-        code: "TC-005",
+        code: "brandon cream",
+
+        slug: "brandon-cream-60x120-tc-005",
 
         image: "./60120img/brandon-cream-nano-polish-60x120-f2-1.jpg",
 
         fa: {
             name: "brandon cream",
-            collection: "کالکشن استون",
             size: "60 × 120",
             type: "پرسلان",
             body: "خاک سفید",
@@ -299,7 +300,6 @@ const PRODUCTS = [
 
         en: {
             name: "brandon cream",
-            collection: "Stone Collection",
             size: "60 × 120",
             type: "Porcelain",
             body: "White Body",
@@ -331,6 +331,8 @@ const PRODUCTS = [
     {
         id: 6,
         code: "TC-006",
+
+        slug: "cream-marble-ceramic-60x120-tc-006",
         image: "./img/IMG-20250904-WA0007.jpg",
 
         fa: {
@@ -371,6 +373,8 @@ const PRODUCTS = [
     {
         id: 7,
         code: "TC-007",
+
+        slug: "light-marble-ceramic-60x120-tc-007",
         image: "./img/IMG-20250904-WA0008.jpg",
 
         fa: {
@@ -409,6 +413,8 @@ const PRODUCTS = [
     {
         id: 8,
         code: "TC-008",
+
+        slug: "white-stone-ceramic-60x120-tc-008",
         image: "./img/Janik-White-Black-60-120-polish.jpg",
 
         fa: {
@@ -447,6 +453,8 @@ const PRODUCTS = [
     {
         id: 9,
         code: "TC-009",
+
+        slug: "light-grey-ceramic-60x120-tc-009",
         image: "./img/CASPIAN-LIGHT-GRAY-120-POL.jpg",
 
         fa: {
@@ -485,6 +493,8 @@ const PRODUCTS = [
     {
         id: 10,
         code: "TC-010",
+
+        slug: "golden-marble-ceramic-60x120-tc-010",
         image: "./img/Magma-Silver-CaspianLightGray-zoom.jpg",
 
         fa: {
@@ -524,6 +534,8 @@ const PRODUCTS = [
     {
         id: 11,
         code: "TC-011",
+
+        slug: "beige-marble-ceramic-60x120-tc-011",
         image: "./img/Astora-4Match-super-Black-WALL-1-2-1-scaled.jpg",
         fa: {
             name: "سرامیک مرمر بژ",
@@ -556,6 +568,8 @@ const PRODUCTS = [
     {
         id: 12,
         code: "TC-012",
+
+        slug: "dark-grey-ceramic-60x120-tc-012",
         image: "./img/Lilium-Cream-Crystal-768x432.jpg",
         fa: {
             name: "سرامیک طوسی تیره",
@@ -588,6 +602,8 @@ const PRODUCTS = [
     {
         id: 13,
         code: "TC-013",
+
+        slug: "white-marble-ceramic-60x120-tc-013",
         image: "./img/3D-AntinoBlack-CarlottaGold60120-7mm-wc-2048x2048.jpg",
         fa: {
             name: "سرامیک سفید مرمر",
@@ -620,6 +636,8 @@ const PRODUCTS = [
     {
         id: 14,
         code: "TC-014",
+
+        slug: "light-cream-ceramic-60x120-tc-014",
         image: "./img/SUNRISE-WHITE-120x120-1-2048x2048.jpg",
         fa: {
             name: "سرامیک کرم روشن",
@@ -652,6 +670,8 @@ const PRODUCTS = [
     {
         id: 15,
         code: "TC-015",
+
+        slug: "luxury-black-ceramic-60x120-tc-015",
         image: "./img/electra-light-cream.jpg",
         fa: {
             name: "سرامیک مشکی لوکس",
@@ -684,6 +704,8 @@ const PRODUCTS = [
     {
         id: 16,
         code: "TC-016",
+
+        slug: "white-stone-ceramic-60x120-tc-016",
         image: "./img/Tomas-4match-60120-1-1-768x768.jpg",
         fa: {
             name: "سرامیک سنگی سفید",
@@ -716,6 +738,8 @@ const PRODUCTS = [
     {
         id: 17,
         code: "TC-017",
+
+        slug: "grey-marble-ceramic-60x120-tc-017",
         image: "./img/IMG-20250904-WA0003.jpg",
         fa: {
             name: "سرامیک طوسی مرمر",
@@ -748,6 +772,8 @@ const PRODUCTS = [
     {
         id: 18,
         code: "TC-018",
+
+        slug: "beige-stone-ceramic-60x120-tc-018",
         image: "./img/IMG-20250904-WA0007.jpg",
         fa: {
             name: "سرامیک بژ سنگی",
@@ -780,6 +806,8 @@ const PRODUCTS = [
     {
         id: 19,
         code: "TC-019",
+
+        slug: "glossy-white-ceramic-60x120-tc-019",
         image: "./img/IMG-20250904-WA0008.jpg",
         fa: {
             name: "سرامیک سفید براق",
@@ -812,6 +840,8 @@ const PRODUCTS = [
     {
         id: 20,
         code: "TC-020",
+
+        slug: "cream-marble-ceramic-60x120-tc-020",
         image: "./img/Janik-White-Black-60-120-polish.jpg",
         fa: {
             name: "سرامیک مرمر کرم",

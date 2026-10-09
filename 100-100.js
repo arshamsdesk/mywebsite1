@@ -21,6 +21,8 @@ const PRODUCTS_100100 = [
 
         code: "TC-1001",
 
+        slug: "analia-white-100x100-tc-1001",
+
         image: "./60120img/analia-white-nano-polish-60x120-f1-1.jpg",
 
         fa: {
@@ -84,6 +86,8 @@ const PRODUCTS_100100 = [
         id: 1002,
 
         code: "TC-1002",
+
+        slug: "astora-4match-100x100-tc-1002",
 
         image: "./60120img/astora-black-4-match-nano-polish-60x120-cover-1.jpg",
 
@@ -149,6 +153,8 @@ const PRODUCTS_100100 = [
 
         code: "TC-1003",
 
+        slug: "brandon-brown-100x100-tc-1003",
+
         image: "./60120img/brandon-brown-nano-polish-60x120-cover-1.jpg",
 
         fa: {
@@ -212,6 +218,8 @@ const PRODUCTS_100100 = [
         id: 1004,
 
         code: "TC-1004",
+
+        slug: "antonella-dark-100x100-tc-1004",
 
         image: "./60120img/antonella-dark-cream-silky-matt-60x120-cover-1.jpg",
 
@@ -277,6 +285,8 @@ const PRODUCTS_100100 = [
 
         code: "TC-1005",
 
+        slug: "brandon-cream-100x100-tc-1005",
+
         image: "./60120img/brandon-cream-nano-polish-60x120-f2-1.jpg",
 
         fa: {
@@ -339,6 +349,8 @@ const PRODUCTS_100100 = [
     {
         id: 1006,
         code: "TC-1006",
+
+        slug: "cream-marble-ceramic-100x100-tc-1006",
         image: "./img/IMG-20250904-WA0007.jpg",
 
         fa: {
@@ -379,6 +391,8 @@ const PRODUCTS_100100 = [
     {
         id: 1007,
         code: "TC-1007",
+
+        slug: "light-marble-ceramic-100x100-tc-1007",
         image: "./img/IMG-20250904-WA0008.jpg",
 
         fa: {
@@ -417,6 +431,8 @@ const PRODUCTS_100100 = [
     {
         id: 1008,
         code: "TC-1008",
+
+        slug: "white-stone-ceramic-100x100-tc-1008",
         image: "./img/Janik-White-Black-60-120-polish.jpg",
 
         fa: {
@@ -455,6 +471,8 @@ const PRODUCTS_100100 = [
     {
         id: 1009,
         code: "TC-1009",
+
+        slug: "light-grey-ceramic-100x100-tc-1009",
         image: "./img/CASPIAN-LIGHT-GRAY-120-POL.jpg",
 
         fa: {
@@ -493,6 +511,8 @@ const PRODUCTS_100100 = [
     {
         id: 1010,
         code: "TC-1010",
+
+        slug: "golden-marble-ceramic-100x100-tc-1010",
         image: "./img/Magma-Silver-CaspianLightGray-zoom.jpg",
 
         fa: {
@@ -532,6 +552,8 @@ const PRODUCTS_100100 = [
     {
         id: 1011,
         code: "TC-1011",
+
+        slug: "beige-marble-ceramic-100x100-tc-1011",
         image: "./img/Astora-4Match-super-Black-WALL-1-2-1-scaled.jpg",
         fa: {
             name: "سرامیک مرمر بژ",
@@ -564,6 +586,8 @@ const PRODUCTS_100100 = [
     {
         id: 1012,
         code: "TC-1012",
+
+        slug: "dark-grey-ceramic-100x100-tc-1012",
         image: "./img/Lilium-Cream-Crystal-768x432.jpg",
         fa: {
             name: "سرامیک طوسی تیره",
@@ -596,6 +620,8 @@ const PRODUCTS_100100 = [
     {
         id: 1013,
         code: "TC-1013",
+
+        slug: "white-marble-ceramic-100x100-tc-1013",
         image: "./img/3D-AntinoBlack-CarlottaGold60120-7mm-wc-2048x2048.jpg",
         fa: {
             name: "سرامیک سفید مرمر",
@@ -628,6 +654,8 @@ const PRODUCTS_100100 = [
     {
         id: 1014,
         code: "TC-1014",
+
+        slug: "light-cream-ceramic-100x100-tc-1014",
         image: "./img/SUNRISE-WHITE-120x120-1-2048x2048.jpg",
         fa: {
             name: "سرامیک کرم روشن",
@@ -660,6 +688,8 @@ const PRODUCTS_100100 = [
     {
         id: 1015,
         code: "TC-1015",
+
+        slug: "luxury-black-ceramic-100x100-tc-1015",
         image: "./img/electra-light-cream.jpg",
         fa: {
             name: "سرامیک مشکی لوکس",
@@ -692,6 +722,8 @@ const PRODUCTS_100100 = [
     {
         id: 1016,
         code: "TC-1016",
+
+        slug: "white-stone-ceramic-100x100-tc-1016",
         image: "./img/Tomas-4match-60120-1-1-768x768.jpg",
         fa: {
             name: "سرامیک سنگی سفید",
@@ -724,6 +756,8 @@ const PRODUCTS_100100 = [
     {
         id: 1017,
         code: "TC-1017",
+
+        slug: "grey-marble-ceramic-100x100-tc-1017",
         image: "./img/IMG-20250904-WA0003.jpg",
         fa: {
             name: "سرامیک طوسی مرمر",
@@ -756,6 +790,8 @@ const PRODUCTS_100100 = [
     {
         id: 1018,
         code: "TC-1018",
+
+        slug: "beige-stone-ceramic-100x100-tc-1018",
         image: "./img/IMG-20250904-WA0007.jpg",
         fa: {
             name: "سرامیک بژ سنگی",
@@ -788,6 +824,8 @@ const PRODUCTS_100100 = [
     {
         id: 1019,
         code: "TC-1019",
+
+        slug: "glossy-white-ceramic-100x100-tc-1019",
         image: "./img/IMG-20250904-WA0008.jpg",
         fa: {
             name: "سرامیک سفید براق",
@@ -820,6 +858,8 @@ const PRODUCTS_100100 = [
     {
         id: 1020,
         code: "TC-1020",
+
+        slug: "cream-marble-ceramic-100x100-tc-1020",
         image: "./img/Janik-White-Black-60-120-polish.jpg",
         fa: {
             name: "سرامیک مرمر کرم",
